@@ -1,7 +1,7 @@
 1,2,3,4,5
 quantity,common name,URL,cost,need or have
-1,SparkFun Thing Plus - ESP32 WROOM (U.FL),https://www.sparkfun.com/products/17381,22.50,
+1,SparkFun Thing Plus - ESP32 WROOM (U.FL),https://www.sparkfun.com/products/17381,22.50,5
 1,SparkFun Humidity Sensor Breakout - SHTC3 (Qwiic),https://www.sparkfun.com/products/16467,10.95,have
-1,SparkFun OpenScale,https://www.sparkfun.com/products/13261,34.50
-1,Electronic scale, 
+1,SparkFun OpenScale,https://www.sparkfun.com/products/13261,34.50,5
+1,Electronic scale, 3,4,5
 1,Temperature Sensor - Waterproof (DS18B20),https://www.sparkfun.com/products/11050,10.95,have
