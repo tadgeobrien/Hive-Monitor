@@ -15,6 +15,8 @@ Do you look at something like this for easy logging an implementation? [SparkFun
 
 
 # BOM
+I think I need to adjust this. Thinking more along the lines of QWIIC since it might be easier, even though it won't neccesarily be cheaper. 
+
 * [Arduino Uno Wifi Rev 2](https://docs.arduino.cc/hardware/uno-wifi-rev2) Quantity 1
 * [SparkFun Humidity Sensor Breakout - SHTC3 (Qwiic)](https://www.sparkfun.com/products/16467) Quantity 1
 * [SparkFun Load Sensor Combinator](https://www.sparkfun.com/products/13878) Quantity 1
