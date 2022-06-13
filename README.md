@@ -20,6 +20,15 @@ Do you look at something like this for easy logging an implementation? [SparkFun
 I think I need to adjust this. Thinking more along the lines of QWIIC since it might be easier, even though it won't neccesarily be cheaper. 
 (SEE FILE)
 
+## OLD BOM Stuff
+* [Arduino Uno Wifi Rev 2](https://docs.arduino.cc/hardware/uno-wifi-rev2) Quantity 1
+* [SparkFun Load Sensor Combinator](https://www.sparkfun.com/products/13878) Quantity 1
+* [SparkFun Load Cell Amplifier - HX711](https://www.sparkfun.com/products/13879) Quantity 1
+* [Load Sensor - 50kg (Generic)](https://www.sparkfun.com/products/10245) Quantity 4
+* [Temperature Sensor - Waterproof (DS18B20)](https://www.sparkfun.com/products/11050) Quantity 1
+* [SparkFun Air Quality Breakout - CCS811](https://www.sparkfun.com/products/14193) Quantity 1
+
+
 # Physical Design Docs
 Thinking this would be any CAD files or drawings. 
 
