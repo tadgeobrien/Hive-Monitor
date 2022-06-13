@@ -1,6 +1,8 @@
 # Hive-Monitor
 Creating a simple bee hive monitoring system for a public garden space. Likely using Arduino and maybe a Rasberry Pi. (Basically Modelling after this [Makezine Article](https://makezine.com/projects/bees-sensors-monitor-hive-health). [The data I would like to look like this](http://everettsprojects.com/2012/12/31/arduino-super-graphing-data-logger/). I would like it if I could set it up as a hotspot that people could click on the data to view it. Ie connect to 490hive wireless and be directed to www.home.arpa where you can choose what to see ie. Hive Weight Hive Temperature Hive Humidity for last N days. 
 
+Alternate ways to [view data..](https://www.electronicsforu.com/electronics-projects/graphical-data-display-arduino-html5).
+
 # Goal
 
 Do you look at something like this for easy logging an implementation? [SparkFun OpenLog Artemis (without IMU)](https://www.sparkfun.com/products/19426). You then become a bit locked into a specific type of thing. Also would need to change to a board similar to the  [SparkFun Thing Plus - ESP32 WROOM (Micro-B)](https://www.sparkfun.com/products/15663)
