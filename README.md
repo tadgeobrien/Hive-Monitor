@@ -9,7 +9,7 @@ Do you look at something like this for easy logging an implementation? [SparkFun
 # To Do
 - [ ] Build a power profile and how to charge the battery. 
 - [ ] Decide on whether to leverage QWICC from Sparkfun.
-- [ ] Decide on where to put enclosure.
+- [ ] Decide on where to put enclosure. I think that mounting it to the hive base or in the quilt box would be the best option. If it is in the quilt box then the length for the load cells will be the longest. Likely look at using an rj45 to do that connection and running the wires back up. Should be able to do the load cell on a single rj45 cable. 
 - [ ] Decide on wiring paths (think about how you will add/remove supers and lengths of cabling)
 
 
@@ -26,9 +26,15 @@ Do you look at something like this for easy logging an implementation? [SparkFun
 # Physical Design Docs
 Thinking this would be any CAD files or drawings. 
 
+# General Design Questions per Sensor or piece.
 
-# Battery and Solar Requirements
+## Battery and Solar Requirements
 * [LiFePO4 Battery](https://www.amazon.com/LiFePO4-Battery-Miady-Rechargeable-Maintenance-Free/dp/B089VXSBC6/?th=1) similar to this? 
 * [Crowd Supply makerPower Solar](https://www.sparkfun.com/products/16352) seems like the right fit. Only question is how would it be designed for a lead battery vs. the lithium iron? 
 * [SparkFun Sunny Buddy - MPPT Solar Charger](https://www.sparkfun.com/products/12885) Would this work at all? Designed for a single cell LiPo battery. 
-* May need to have a lenght of cable for powering things. Not sure how I would do this. Most likely send the power from the panel to the inverter close to the actual sensors. (4mm pv cable for solar power. It is DC) I think that the distance would be about 20 feet or so for this application. Othe concerns would be grounding. 
+* May need to have a lenght of cable for powering things. Not sure how I would do this. Most likely send the power from the panel to the inverter close to the actual sensors. (4mm pv cable for solar power. It is DC) I think that the distance would be about 20 feet or so for this application. Othe concerns would be grounding.
+
+
+## Load Cells
+
+## Temperature and Humidity 
