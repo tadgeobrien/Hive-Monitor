@@ -35,6 +35,10 @@ Thinking this would be any CAD files or drawings.
 * May need to have a lenght of cable for powering things. Not sure how I would do this. Most likely send the power from the panel to the inverter close to the actual sensors. (4mm pv cable for solar power. It is DC) I think that the distance would be about 20 feet or so for this application. Othe concerns would be grounding.
 
 
-## Load Cells
+## Load Cells Requirements
 
-## Temperature and Humidity 
+
+## Temperature and Humidity Requirements
+* Needs to be able to measure both of these and I am thinking of placing them on the top of the hive. Would like to understand how best to build the enclosure to get decent readings. 
+
+
