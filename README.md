@@ -1,5 +1,5 @@
 # Hive-Monitor
-Creating a simple bee hive monitoring system for a public garden space. Likely using Arduino and maybe a Rasberry Pi. (Basically Modelling after this [Makezine Article](https://makezine.com/projects/bees-sensors-monitor-hive-health).
+Creating a simple bee hive monitoring system for a public garden space. Likely using Arduino and maybe a Rasberry Pi. (Basically Modelling after this [Makezine Article](https://makezine.com/projects/bees-sensors-monitor-hive-health). [The data I would like to look like this](http://everettsprojects.com/2012/12/31/arduino-super-graphing-data-logger/). I would like it if I could set it up as a hotspot that people could click on the data to view it. Ie connect to 490hive wireless and be directed to www.home.arpa where you can choose what to see ie. Hive Weight Hive Temperature Hive Humidity for last N days. 
 
 # Goal
 
