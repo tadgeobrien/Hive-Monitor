@@ -22,6 +22,7 @@ Do you look at something like this for easy logging an implementation? [SparkFun
 * [Load Sensor - 50kg (Generic)](https://www.sparkfun.com/products/10245) Quantity 4
 * [Temperature Sensor - Waterproof (DS18B20)](https://www.sparkfun.com/products/11050) Quantity 1
 * [SparkFun Air Quality Breakout - CCS811](https://www.sparkfun.com/products/14193) Quantity 1
+* [SparkFun OpenScale](https://www.sparkfun.com/products/13261)
 
 # Physical Design Docs
 Thinking this would be any CAD files or drawings. 
