@@ -3,10 +3,11 @@ Creating a simple bee hive monitoring system for a public garden space. Likely u
 
 # Goal
 
-Do you look at something like this for easy logging an implementation? [SparkFun OpenLog Artemis (without IMU)](https://www.sparkfun.com/products/19426). You then become a bit locked into a specific type of thing.
+Do you look at something like this for easy logging an implementation? [SparkFun OpenLog Artemis (without IMU)](https://www.sparkfun.com/products/19426). You then become a bit locked into a specific type of thing. Also would need to change to a board similar to the  [SparkFun Thing Plus - ESP32 WROOM (Micro-B)](https://www.sparkfun.com/products/15663)
 
 
 # To Do
+- [ ] Build a power profile and how to charge the battery. 
 - [ ] Decide on whether to leverage QWICC from Sparkfun.
 - [ ] Decide on where to put enclosure.
 - [ ] Decide on wiring paths (think about how you will add/remove supers and lengths of cabling)
@@ -24,3 +25,7 @@ Do you look at something like this for easy logging an implementation? [SparkFun
 
 # Physical Design Docs
 Thinking this would be any CAD files or drawings. 
+
+
+# Battery and Solar Requirements
+* [LiFePO4 Battery](https://www.amazon.com/LiFePO4-Battery-Miady-Rechargeable-Maintenance-Free/dp/B089VXSBC6/?th=1) similar to this? 
