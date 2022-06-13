@@ -27,6 +27,7 @@ Do you look at something like this for easy logging an implementation? [SparkFun
 Thinking this would be any CAD files or drawings. 
 
 # General Design Questions per Sensor or piece.
+Thinking if you use RJ45 as connectors you'd want to look at [waterproof enclosures](https://www.amazon.com/Waterproof-Connector-Shielded-Ethernet-Tedgetal/dp/B095JZSGYG).
 
 ## Battery and Solar Requirements
 * [LiFePO4 Battery](https://www.amazon.com/LiFePO4-Battery-Miady-Rechargeable-Maintenance-Free/dp/B089VXSBC6/?th=1) similar to this? 
