@@ -43,7 +43,7 @@ Thinking if you use RJ45 as connectors you'd want to look at [waterproof enclosu
 
 
 ## Load Cells Requirements
-
+In the one from Sparkfun he hacks a premade scale. I could go to a second hand store or buy one from amazon. I already have 4 load cells. So I could try to build a simple one with a square piece of plywood and some pressure treated 2x4s. I would build the square and put the cells in the corners then mount this inside of the hive stand. The accuracy of this is the biggest question. 
 
 ## Temperature and Humidity Requirements
 * Needs to be able to measure both of these and I am thinking of placing them on the top of the hive. Would like to understand how best to build the enclosure to get decent readings. 
