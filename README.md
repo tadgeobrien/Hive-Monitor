@@ -28,7 +28,6 @@ I think I need to adjust this. Thinking more along the lines of QWIIC since it m
 * [Temperature Sensor - Waterproof (DS18B20)](https://www.sparkfun.com/products/11050) Quantity 1
 * [SparkFun Air Quality Breakout - CCS811](https://www.sparkfun.com/products/14193) Quantity 1
 
-
 # Physical Design Docs
 Thinking this would be any CAD files or drawings. 
 
