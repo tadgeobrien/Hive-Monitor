@@ -1,7 +1,14 @@
 #include <HX711.h>
 #include <OneWire.h>
+#include <WiFiNINA.h>
 
 
+//Wifi Access Point
+char ssid[] = ""
+char pass[] = ""
+int keyIndex = 0;
+
+WiFiServer server(80);
 
 //HX711 Wiring
 
