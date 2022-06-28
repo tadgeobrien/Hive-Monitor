@@ -3,7 +3,7 @@
 #include <WiFiNINA.h>
 
 
-//Wifi Access Point
+//Wifi Access Point need to be 8 Characters.
 char ssid[] = ""
 char pass[] = ""
 int keyIndex = 0;
