@@ -1,4 +1,9 @@
+//https://docs.arduino.cc/tutorials/uno-wifi-rev2/uno-wifi-r2-web-server-ap-mode
+
+
 #include <WiFiNINA.h>
+
+
 
 char ssid[] = "yourNetwork";        // your network SSID (name)
 char pass[] = "yourPassword";    // your network password (use for WPA, or use as key for WEP)
