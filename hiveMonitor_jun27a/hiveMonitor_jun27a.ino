@@ -11,6 +11,10 @@ int keyIndex = 0;
 WiFiServer server(80);
 
 //HX711 Wiring
+//DAT Pin 3
+
+//CLK Pin 2
+
 
 // One Wire DS18bs20 wiring
 
@@ -35,6 +39,9 @@ void loop() {
   //Test line for Temp every second.
 
 
+  //Check for Humidity at hour intervals 
+
+  //Test line for Humidity every second.
 
 
 }
