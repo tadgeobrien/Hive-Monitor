@@ -47,4 +47,6 @@ In the one from Sparkfun he hacks a premade scale. I could go to a second hand s
 ## Temperature and Humidity Requirements
 * Needs to be able to measure both of these and I am thinking of placing them on the top of the hive. Would like to understand how best to build the enclosure to get decent readings. 
 
+# Libraries Used
 
+HX711 https://github.com/bogde/HX711
