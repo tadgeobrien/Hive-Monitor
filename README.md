@@ -50,3 +50,14 @@ In the one from Sparkfun he hacks a premade scale. I could go to a second hand s
 # Libraries Used
 
 HX711 https://github.com/bogde/HX711
+
+
+
+
+
+# References Used
+Here is a list of things like Youtube videos that I used for reference.
+
+[Arduino Scale with HX711 and 50kg Bathroom Scale Load Cells | Step by Step Guide.] (https://www.youtube.com/watch?v=LIuf2egMioA)
+
+[ Load Cell Amplifier HX711 Breakout Hookup Guide ](https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide)
