@@ -40,6 +40,8 @@ Thinking if you use RJ45 as connectors you'd want to look at [waterproof enclosu
 * [SparkFun Sunny Buddy - MPPT Solar Charger](https://www.sparkfun.com/products/12885) Would this work at all? Designed for a single cell LiPo battery. 
 * May need to have a lenght of cable for powering things. Not sure how I would do this. Most likely send the power from the panel to the inverter close to the actual sensors. (4mm pv cable for solar power. It is DC) I think that the distance would be about 20 feet or so for this application. Othe concerns would be grounding.
 
+* [Open Source Solar System](https://opensource.com/article/22/12/open-source-solar-power-home) Just some notes on a solar system.
+
 
 ## Load Cells Requirements
 In the one from Sparkfun he hacks a premade scale. I could go to a second hand store or buy one from amazon. I already have 4 load cells. So I could try to build a simple one with a square piece of plywood and some pressure treated 2x4s. I would build the square and put the cells in the corners then mount this inside of the hive stand. The accuracy of this is the biggest question. 
@@ -58,6 +60,6 @@ HX711 https://github.com/bogde/HX711
 # References Used
 Here is a list of things like Youtube videos that I used for reference.
 
-[Arduino Scale with HX711 and 50kg Bathroom Scale Load Cells | Step by Step Guide.] (https://www.youtube.com/watch?v=LIuf2egMioA)
+[Arduino Scale with HX711 and 50kg Bathroom Scale Load Cells | Step by Step Guide.](https://www.youtube.com/watch?v=LIuf2egMioA)
 
-[ Load Cell Amplifier HX711 Breakout Hookup Guide ](https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide)
+[Load Cell Amplifier HX711 Breakout Hookup Guide ](https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide)
