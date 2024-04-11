@@ -25,6 +25,13 @@ DallasTemperature sensors(&oneWire);
 float OutCel=0; // Outside Celcius tobrien 20240410. May simply implement this instead of conversions.
 float OutFah=0; // Outside Fahrenheit
 
+// Setting up for Humidity sensor.
+float InCel=0;  // Inside Celcius temp
+float InFah=0;  // Outside Farenheit May not use.
+float InHum=0;  // Inside Humidity 
+
+
+
 //LED Testing tobrien 20240410 keep or remove?
 int led = LED_BUILTIN;
 int status = WL_IDLE_STATUS;
@@ -187,8 +194,22 @@ void OutsideTemp(){
   OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
   Serial.print(" Outside C  ");
   Serial.println(OutCel);
+  //
+  // TOBrien 20240410 Maybe I can put the delay up higher so I am calling the functions without the delays.
+  // Have to wait to test.
+  //
   delay(1000);  //Testing - This is in milliseconds so it is 1 seconds.
   //delay(3600000);  //Production - This is 1 Hour. Also have a feeling that this messes up your sampling some how as it is in the void. 
 }
 
+/*
+
+void InsideTemp(){
   
+  }
+
+void InsideHumidity(){
+  
+  }  
+
+*/
