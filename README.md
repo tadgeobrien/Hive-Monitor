@@ -1,3 +1,77 @@
+# Hive Montitor
+
+## Goal
+
+Create a simple set of sensors to monitor a beehive of mine. It will be solar powered and not connected to any network. 
+The sensors that I will be using are as follows:
+* Weight Measure
+* Inside Temperature and Humidity Measure
+* Outside Temperature Measure
+
+## To Dos
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+
+# Arduino Code
+
+## Variables
+* OutCel is for outside temperature in Celsius.
+* OutFah is for the outside temp in Farenheit. May not even implement this to start.
+* InCel is for the inside temperature coming from the humidity sensor in Celsius
+* InFah is for the inside temperature coming from the humidity sensor in Farenheit. May not even implement to start.
+* InHum is for the inside humidity. Not sure of the measurement.
+
+## Functions
+* void printWiFiStatus()
+* void OutsideTemp()
+* void InsideTemp()
+* void InsideHumidity()
+
+## Pinouts
+
+# Hardware Notes
+
+## Bill of Materials (BOM)
+Maybe I should make this a table :)
+
+* Arduino Uno Wifi R2
+* Real Time Clock Sparkfun BOB-12708
+* Humidity Sensor SparkFun SEN-16467
+* Onewire Temperature sensor
+* Openlog Sparkfun ####
+* Sparkfun QWICC shield for Arduino
+* Load Cells
+
+### OLD BOM Stuff
+* [Arduino Uno Wifi Rev 2](https://docs.arduino.cc/hardware/uno-wifi-rev2) Quantity 1
+* [SparkFun Load Sensor Combinator](https://www.sparkfun.com/products/13878) Quantity 1
+* [SparkFun Load Cell Amplifier - HX711](https://www.sparkfun.com/products/13879) Quantity 1
+* [Load Sensor - 50kg (Generic)](https://www.sparkfun.com/products/10245) Quantity 4
+* [Temperature Sensor - Waterproof (DS18B20)](https://www.sparkfun.com/products/11050) Quantity 1
+* [SparkFun Air Quality Breakout - CCS811](https://www.sparkfun.com/products/14193) Quantity 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# OLD INFO BELOW Pre 20240410
+
 # Hive-Monitor
 Creating a simple bee hive monitoring system for a public garden space. Likely using Arduino and maybe a Rasberry Pi. (Basically Modelling after this [Makezine Article](https://makezine.com/projects/bees-sensors-monitor-hive-health). [The data I would like to look like this](http://everettsprojects.com/2012/12/31/arduino-super-graphing-data-logger/). I would like it if I could set it up as a hotspot that people could click on the data to view it. Ie connect to 490hive wireless and be directed to www.home.arpa where you can choose what to see ie. Hive Weight Hive Temperature Hive Humidity for last N days. 
 
