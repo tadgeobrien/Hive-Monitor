@@ -126,6 +126,11 @@ void loop() {
               int randomReading = analogRead(A1);
               client.print("Random reading from analog pin: ");
               client.print(randomReading);
+              
+              //TOBrien implement the printing of the outside C on the web interface.
+              client.print("Outside Temperature: ");
+              client.print(OutCel);
+
 
               //HTTP response ends with a blank line.
               client.println();
@@ -192,8 +197,8 @@ void OutsideTemp(){
   
   sensors.requestTemperatures();
   OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
-  Serial.print(" Outside C  ");
-  Serial.println(OutCel);
+  //Serial.print(" Outside C  "); TOBrien 20240412 Commented out since I should see it on the web UI
+  //Serial.println(OutCel);       TOBrien 20240412 Commented out since I should see it on the web UI
   //
   // TOBrien 20240410 Maybe I can put the delay up higher so I am calling the functions without the delays.
   // Have to wait to test.
