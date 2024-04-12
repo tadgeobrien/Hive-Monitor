@@ -9,10 +9,20 @@ The sensors that I will be using are as follows:
 * Outside Temperature Measure
 
 ## To Dos
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] Implement Weight measures
+- [ ] Implement battery power reading on webpage and openlog?
+- [ ] Implement solar power 
+- [ ] Implement way to download Data from web page
+- [ ] Have Openlog recieving all current values of data
+- [ ] Have Openlog implemented and getting data
+- [ ] Have RTC implemented on website
+- [ ] Have RTC working
+- [ ] Have Inside temp and humidity report on website
+- [ ] Have Inside humidity working
+- [ ] Have Inside temp working 
+- [X] Have Outside temp appear on webpage.
+- [X] Set up Onewire for outside temperature 
+- [X] Set up an Webserver and wireless connection to the Arduino. 
 
 # Arduino Code
 
