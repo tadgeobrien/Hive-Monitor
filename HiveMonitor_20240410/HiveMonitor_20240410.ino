@@ -5,12 +5,28 @@
 //
 //  - Onewire is for external temperature of the hive. Still need to figure out
 //    where I would want to put the sensor itself.
+//  
+//  - QWICC should probaly document the i2c addresses.
 //
+//  RTC Notes - run 24 hour clock run MM/DD/YYYY I think would make the most sense unless something else makes the data processing different.
+//      Or you can use  timestamp in ISO 8601 format (yyyy-mm-ddThh:mm:ss).
+//
+//  OpenLog Notes - Do you simply create a file for every day of a month and a folder for the month. Then a folder for they year? 
+//        Or do you simply create a file to X MB size and then have it time stamp when it creates the file? 
+//        I really think the thing here is how do you want to download the data? If you download it periodly with your phone 
+//        then you have to think about he file manipulation. If you pull the SD card who cares. (I will pull the SD at the end of the season I think regrdless.
+//  
+//        Perhaps I do a file write a week and download a weeks worth of data? That would make a lot of sense. What is my weekly start and end date? 
 
 
+
+//// Libraries I am using
 #include <WiFiNINA.h>  //Wifi Library
 #include <OneWire.h>  // Takes in the data.
 #include <DallasTemperature.h>  //Does calculations and conversion.
+#include <SparkFun_RV8803.h>  //Real Time Clock 
+
+
 
 //Wireless network details.
 char ssid[] ="HiveMind";
