@@ -1,5 +1,17 @@
 # Hive Montitor
 
+NOTE--- I used the Sparkfun Qwiic shield which was originaly designed for the Uno. However the Uno Wifi Rev2 that I have has two pins that are different. 
+        So to solve this the following has to be done. (https://forum.sparkfun.com/viewtopic.php?f=105&t=56000&p=227024&hilit=qwiic+shield+Qwiic+Shield+Uno+WiFi+V2#p227642)
+        
+        The pins not going in all the way is normal, it's caused by the USB connector being higher than normal.
+        We haven't tested the Qwiic Shield on the Uno WiFi V2 but it should work with this small change:
+            Connect a jumper wire from A5 to SCL
+            Connect a jumper wire from A4 to SDA
+
+        The reason for the jumper wires is that the shield was made for the regular non WiFi Uno where the I2C pins are on A4 and A5 and the Uno WiFi V2 moves those pins over to the other side of the board. With the jumpers in place, the shield will work even though it doesn't sit flush with the Arduino. 
+
+Of course now they have the Uno R4 Wifi which has a Qwiic connector built in GRRRR https://store-usa.arduino.cc/products/uno-r4-wifi .
+
 ## Goal
 
 Create a simple set of sensors to monitor a beehive of mine. It will be solar powered and not connected to any network. 
@@ -23,6 +35,12 @@ The sensors that I will be using are as follows:
 - [X] Have Outside temp appear on webpage.
 - [X] Set up Onewire for outside temperature 
 - [X] Set up an Webserver and wireless connection to the Arduino. 
+
+
+# I2C addresses in Use
+I think I need to verify all of these, but I don't think that this is why OpenLog isn't working. 
+* RTC 0x64
+* OpenLog 0x2A (42)
 
 # Arduino Code
 
