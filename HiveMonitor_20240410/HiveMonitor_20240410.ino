@@ -1,3 +1,5 @@
+
+
 //T OBRIEN 20240409
 // Taken from https://docs.arduino.cc/tutorials/uno-wifi-rev2/uno-wifi-r2-web-server-ap-mode/
 //
@@ -27,6 +29,8 @@
 #include <SparkFun_RV8803.h>  //Real Time Clock 
 
 
+//RTC Clock
+RV8803 rtc;
 
 //Wireless network details.
 char ssid[] ="HiveMind";
@@ -103,6 +107,13 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+
+
+
+  
+  ////////////////////////////////////////////////////
+  //  This is the Wifi AP
+  ////////////////////////////////////////////////////
   // compare the previous status to the current status
   if (status != WiFi.status()){
     //it had changed update the variable
@@ -143,6 +154,10 @@ void loop() {
               client.print("Random reading from analog pin: ");
               client.print(randomReading);
               
+              //client.print(" ");
+              //client.print(currentTime);
+              //client.print(" ");
+              
               //TOBrien implement the printing of the outside C on the web interface.
               client.print("Outside Temperature: ");
               client.print(OutCel);
@@ -177,6 +192,8 @@ void loop() {
       }
 
       OutsideTemp();  // This should be my function to check outside temp.
+      
+
 /*
   // TOBrien 20240410
   // Simple Onewire data print to serial.
@@ -213,8 +230,8 @@ void OutsideTemp(){
   
   sensors.requestTemperatures();
   OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
-  //Serial.print(" Outside C  "); TOBrien 20240412 Commented out since I should see it on the web UI
-  //Serial.println(OutCel);       TOBrien 20240412 Commented out since I should see it on the web UI
+  //Serial.print(" Outside C  "); // TOBrien 20240412 Commented out since I should see it on the web UI
+  //Serial.println(OutCel);       // TOBrien 20240412 Commented out since I should see it on the web UI
   //
   // TOBrien 20240410 Maybe I can put the delay up higher so I am calling the functions without the delays.
   // Have to wait to test.
@@ -222,6 +239,12 @@ void OutsideTemp(){
   delay(1000);  //Testing - This is in milliseconds so it is 1 seconds.
   //delay(3600000);  //Production - This is 1 Hour. Also have a feeling that this messes up your sampling some how as it is in the void. 
 }
+
+
+  ////////////////////////////////////////////////////
+  // Like to do the RTC here.
+
+
 
 /*
 
