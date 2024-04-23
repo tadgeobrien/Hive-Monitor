@@ -1,5 +1,3 @@
-
-
 //T OBRIEN 20240409
 // Taken from https://docs.arduino.cc/tutorials/uno-wifi-rev2/uno-wifi-r2-web-server-ap-mode/
 //
@@ -27,10 +25,14 @@
 #include <OneWire.h>  // Takes in the data.
 #include <DallasTemperature.h>  //Does calculations and conversion.
 #include <SparkFun_RV8803.h>  //Real Time Clock 
+#include <SparkFun_SHTC3.h>
+#include <SparkFun_Qwiic_OpenLog_Arduino_Library.h>
 
 
 //RTC Clock
-RV8803 rtc;
+RV8803 rtc;       //Declare an instance of the RV8803 class
+SHTC3 mySHTC3;    // Declare an instance of the SHTC3 class
+
 
 //Wireless network details.
 char ssid[] ="HiveMind";
@@ -230,8 +232,8 @@ void OutsideTemp(){
   
   sensors.requestTemperatures();
   OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
-  //Serial.print(" Outside C  "); // TOBrien 20240412 Commented out since I should see it on the web UI
-  //Serial.println(OutCel);       // TOBrien 20240412 Commented out since I should see it on the web UI
+  Serial.print(" Outside C  "); // TOBrien 20240412 Commented out since I should see it on the web UI
+  Serial.println(OutCel);       // TOBrien 20240412 Commented out since I should see it on the web UI
   //
   // TOBrien 20240410 Maybe I can put the delay up higher so I am calling the functions without the delays.
   // Have to wait to test.
@@ -246,14 +248,9 @@ void OutsideTemp(){
 
 
 
-/*
 
-void InsideTemp(){
+
+void InsideHive(){
   
   }
 
-void InsideHumidity(){
-  
-  }  
-
-*/
