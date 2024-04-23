@@ -63,6 +63,11 @@ WiFiServer server(80);
 
 void setup() {
   // put your setup code here, to run once:
+
+  Wire.begin();     // This is to start the i2c bus I believe
+  mySHTC3.begin();  // This calls the SHTC3 sensor to start
+  
+  
   Serial.begin(9600);
   while (!Serial){
     ; //wait for serial port to connect. Needed for Native USB  Port only -- Huh?
@@ -154,16 +159,20 @@ void loop() {
 
               int randomReading = analogRead(A1);
               client.print("Random reading from analog pin: ");
-              client.print(randomReading);
+              client.println(randomReading);
               
               //client.print(" ");
               //client.print(currentTime);
               //client.print(" ");
               
-              //TOBrien implement the printing of the outside C on the web interface.
+              //TOBrien implement the printing of the Data to the web interface
               client.print("Outside Temperature: ");
               client.print(OutCel);
-
+              client.print("  Relative Humidty: ");
+              client.print(mySHTC3.toPercent());
+              client.print("%, Inside Temperature = ");
+              client.print(mySHTC3.toDegF());
+              client.print(" deg C"); //Need to change to C
 
               //HTTP response ends with a blank line.
               client.println();
@@ -194,6 +203,10 @@ void loop() {
       }
 
       OutsideTemp();  // This should be my function to check outside temp.
+
+      //Inside hive monitoring
+      SHTC3_Status_TypeDef result = mySHTC3.update(); //Update the sensor
+      InsideHive();
       
 
 /*
@@ -232,8 +245,8 @@ void OutsideTemp(){
   
   sensors.requestTemperatures();
   OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
-  Serial.print(" Outside C  "); // TOBrien 20240412 Commented out since I should see it on the web UI
-  Serial.println(OutCel);       // TOBrien 20240412 Commented out since I should see it on the web UI
+  Serial.print(" Outside C = "); // TOBrien 20240412 Commented out since I should see it on the web UI
+  Serial.print(OutCel);       // TOBrien 20240412 Commented out since I should see it on the web UI
   //
   // TOBrien 20240410 Maybe I can put the delay up higher so I am calling the functions without the delays.
   // Have to wait to test.
@@ -251,6 +264,38 @@ void OutsideTemp(){
 
 
 void InsideHive(){
-  
+  //Function for getting the inside temp and humidity I believe humidity will come first
+  if(mySHTC3.lastStatus == SHTC3_Status_Nominal)              // You can also assess the status of the last command by checking the ".lastStatus" member of the object
+  {
+    //Here is the sending to Openlog
+
+    //Here is sending to the Webpage
+
+
+    //Here is sending to serial data
+    Serial.print(" RH = "); 
+    Serial.print(mySHTC3.toPercent());                        // "toPercent" returns the percent humidity as a floating point number
+    Serial.print("%, T = "); 
+    Serial.print(mySHTC3.toDegC());                           // "toDegF" and "toDegC" return the temperature as a flaoting point number in deg F and deg C respectively 
+    Serial.println(" deg C"); 
+
+    delay(1000);
   }
+  else
+  {
+    Serial.print("Update failed, error: "); 
+    //errorDecoder(mySHTC3.lastStatus);
+    Serial.println();
+
+
+
+  }
+
+}
+
+void Data(){
+
+
+}
+
 
