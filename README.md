@@ -29,9 +29,9 @@ The sensors that I will be using are as follows:
 - [ ] Have Openlog implemented and getting data
 - [ ] Have RTC implemented on website
 - [ ] Have RTC working
-- [ ] Have Inside temp and humidity report on website
-- [ ] Have Inside humidity working
-- [ ] Have Inside temp working 
+- [X] Have Inside temp and humidity report on website
+- [X] Have Inside humidity working
+- [X] Have Inside temp working 
 - [X] Have Outside temp appear on webpage.
 - [X] Set up Onewire for outside temperature 
 - [X] Set up an Webserver and wireless connection to the Arduino. 
