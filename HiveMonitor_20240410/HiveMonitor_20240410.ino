@@ -29,7 +29,7 @@
 #include <SparkFun_Qwiic_OpenLog_Arduino_Library.h>
 
 
-//RTC Clock
+//Adding Classes
 RV8803 rtc;       // Declare an instance of the RV8803 class
 SHTC3 mySHTC3;    // Declare an instance of the SHTC3 class
 OpenLog myLog;    // Declare an instance of the OpenLog class
@@ -219,7 +219,8 @@ void loop() {
       */
 
       myLog.begin();
-      myLog.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegF())+","+String(OutCel)+",weigth");
+      myLog.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+      myLog.syncFile();
 
 }
 
@@ -243,7 +244,7 @@ void OutsideTemp(){
   // TOBrien 20240410 Maybe I can put the delay up higher so I am calling the functions without the delays.
   // Have to wait to test.
   //
-  delay(1000);  //Testing - This is in milliseconds so it is 1 seconds.
+  delay(3000);  //Testing - This is in milliseconds so it is 1 seconds.
   //delay(3600000);  //Production - This is 1 Hour. Also have a feeling that this messes up your sampling some how as it is in the void. 
 }
 
@@ -273,7 +274,7 @@ void InsideHive(){
     Serial.print(mySHTC3.toDegC());                           // "toDegF" and "toDegC" return the temperature as a flaoting point number in deg F and deg C respectively 
     Serial.println(" deg C"); 
 
-    delay(1000);
+    delay(3000);
   }
   else
   {
