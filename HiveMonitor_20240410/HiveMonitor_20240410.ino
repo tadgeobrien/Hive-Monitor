@@ -273,7 +273,6 @@ I may start it out the easy way and then look at the data and see what I like, d
   {
       String logDate = rtc.stringDateUSA();
       String logTime = rtc.stringTime();
-
       Serial.print(logDate);
       Serial.print(",");
       Serial.print(logTime);
