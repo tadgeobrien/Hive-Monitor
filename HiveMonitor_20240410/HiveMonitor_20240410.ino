@@ -268,9 +268,19 @@ void OutsideTemp(){
 }
 
 
+void myTime(){
   ////////////////////////////////////////////////////
   // Like to do the RTC here.
+/*
+Trying to decide how I want to do this. I can either just send the entire date from RTC which would be the easy way
+I could also put it in the format that I want Year-Month-Day-HH:MM:SS and either send that as seperate fields 
+in the CSV file or at least order it based on the date and then time 
 
+I may start it out the easy way and then look at the data and see what I like, dislike 
+
+*/
+
+}
 
 
 
