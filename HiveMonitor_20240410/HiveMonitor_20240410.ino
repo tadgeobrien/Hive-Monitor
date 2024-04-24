@@ -259,10 +259,15 @@ in the CSV file or at least order it based on the date and then time
 
 I may start it out the easy way and then look at the data and see what I like, dislike 
 */
-  String logDate = rtc.stringDateUSA();
-  Serial.print(logDate);
-  Serial.print(",");
-}  
+  if (rtc.updateTime() == true) //Updates the time variables from RTC
+  {
+      String logDate = rtc.stringDateUSA();
+      Serial.print(logDate);
+      Serial.print(",");
+  }
+
+  delay(3000);
+}
  
 
 void InsideHive(){
