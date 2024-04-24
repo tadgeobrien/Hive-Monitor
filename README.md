@@ -21,6 +21,7 @@ The sensors that I will be using are as follows:
 * Outside Temperature Measure
 
 ## To Dos
+- [ ] Do I need a way to update the current data on the webpage from the webpage without adding to the Openlog file?
 - [ ] Implement Weight measures
 - [ ] Implement battery power reading on webpage and openlog?
 - [ ] Implement solar power 
