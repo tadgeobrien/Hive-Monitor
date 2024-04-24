@@ -21,11 +21,11 @@
 
 
 //// Libraries I am using
-#include <WiFiNINA.h>  //Wifi Library
-#include <OneWire.h>  // Takes in the data.
+#include <WiFiNINA.h>           //Wifi Library
+#include <OneWire.h>            // Takes in the data.
 #include <DallasTemperature.h>  //Does calculations and conversion.
-#include <SparkFun_RV8803.h>  //Real Time Clock 
-#include <SparkFun_SHTC3.h>
+#include <SparkFun_RV8803.h>    //Real Time Clock 
+#include <SparkFun_SHTC3.h>     //Using for inside Humidity and Temp
 #include <SparkFun_Qwiic_OpenLog_Arduino_Library.h>
 
 
@@ -52,8 +52,6 @@ float InCel=0;  // Inside Celcius temp
 float InFah=0;  // Outside Farenheit May not use.
 float InHum=0;  // Inside Humidity 
 
-
-
 //LED Testing tobrien 20240410 keep or remove?
 int led = LED_BUILTIN;
 int status = WL_IDLE_STATUS;
@@ -66,7 +64,7 @@ void setup() {
 
   Wire.begin();     // This is to start the i2c bus I believe
   mySHTC3.begin();  // This calls the SHTC3 sensor to start
-  
+  rtc.begin();
   
   Serial.begin(9600);
   while (!Serial){
@@ -204,6 +202,10 @@ void loop() {
         Serial.println("Client disconnected");
       }
 
+      //Date and Time
+      myTime();
+      
+      //Outside temp in C
       OutsideTemp();  // This should be my function to check outside temp.
 
       //Inside hive monitoring
@@ -217,7 +219,6 @@ void loop() {
             20240420,02:20,24,31,1,95
             20240420,03:20,24,31,1,95
       */
-
       myLog.begin();
       myLog.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
       myLog.syncFile();
@@ -258,7 +259,11 @@ in the CSV file or at least order it based on the date and then time
 
 I may start it out the easy way and then look at the data and see what I like, dislike 
 */
-}
+  String logDate = rtc.stringDateUSA();
+  Serial.print(logDate);
+  Serial.print(",");
+}  
+ 
 
 void InsideHive(){
   //Function for getting the inside temp and humidity I believe humidity will come first
