@@ -153,26 +153,28 @@ void loop() {
               client.println("HTTP/1.1 200 OK");
               client.println("Content-type:text/html");
               client.println("");
+            
             // the content of the HTTP response follows the header:
               client.print("Click <a href=\"/H\">here</a> turn the LED on<br>");
               client.print("Click <a href=\"/H\">here</a> turn the LED off<br>");
 
-              int randomReading = analogRead(A1);
-              client.print("Random reading from analog pin: ");
-              client.println(randomReading);
+              //int randomReading = analogRead(A1);
+              //client.print("Random reading from analog pin: ");
+              //client.println(randomReading);
               
               //client.print(" ");
               //client.print(currentTime);
               //client.print(" ");
               
               //TOBrien implement the printing of the Data to the web interface
-              client.print("Outside Temperature: ");
-              client.print(OutCel);
-              client.print("  Relative Humidty: ");
+              client.print("Outside Temperature = ");
+              client.println(OutCel);
+              client.print("<br>Inside Relative Humidty = ");
               client.print(mySHTC3.toPercent());
-              client.print("%, Inside Temperature = ");
+              client.println("% <br>");
+              client.print("Inside Temperature = ");
               client.print(mySHTC3.toDegF());
-              client.print(" deg C"); //Need to change to C
+              client.println(" deg F"); //Need to change to C
 
               //HTTP response ends with a blank line.
               client.println();
@@ -215,46 +217,24 @@ void loop() {
             20240420,02:20,24,31,1,95
             20240420,03:20,24,31,1,95
       */
- 
 
       myLog.begin();
       myLog.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegF())+","+String(OutCel)+",weigth");
 
-
-/*
-  // TOBrien 20240410
-  // Simple Onewire data print to serial.
-  // Only doing Celcius at this point. Don't know if I want to implement Farenheit.TOBrien 20240410
-  // Eventually need to make this so that I am sending this data every hour to the
-  // Openlog SD card. 
-  // TOBrien 20240410 Wondering if I can simply create a function with the delay that would then 
-  // eliminate any potential sampling time problems?
-  sensors.requestTemperatures();
-  OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
-  Serial.print(" Outside C  ");
-  Serial.println(OutCel);
-  delay(1000);  //Testing - This is in milliseconds so it is 1 seconds.
-  //delay(3600000);  //Production - This is 1 Hour. Also have a feeling that this messes up your sampling some how as it is in the void. 
-
-*/
 }
 
 void printWiFiStatus(){
   //print the ssid of the net you are connected to
   Serial.print("SSID: ");
   Serial.println(WiFi.SSID());
-
   // print your wifi shields IP Address
   IPAddress ip =  WiFi.localIP();
   Serial.print("IP Address: ");
   Serial.println(ip);
   }
-
-  
  
 void OutsideTemp(){
   // Function for getting the outside temperature. Use this in void loop.
-  
   sensors.requestTemperatures();
   OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
   Serial.print(" Outside C = "); // TOBrien 20240412 Commented out since I should see it on the web UI
@@ -267,7 +247,6 @@ void OutsideTemp(){
   //delay(3600000);  //Production - This is 1 Hour. Also have a feeling that this messes up your sampling some how as it is in the void. 
 }
 
-
 void myTime(){
   ////////////////////////////////////////////////////
   // Like to do the RTC here.
@@ -277,23 +256,15 @@ I could also put it in the format that I want Year-Month-Day-HH:MM:SS and either
 in the CSV file or at least order it based on the date and then time 
 
 I may start it out the easy way and then look at the data and see what I like, dislike 
-
 */
-
 }
-
-
-
 
 void InsideHive(){
   //Function for getting the inside temp and humidity I believe humidity will come first
   if(mySHTC3.lastStatus == SHTC3_Status_Nominal)              // You can also assess the status of the last command by checking the ".lastStatus" member of the object
   {
     //Here is the sending to Openlog
-
-
     //Here is sending to the Webpage
-
 
     //Here is sending to serial data
     Serial.print(" RH = "); 
@@ -309,18 +280,12 @@ void InsideHive(){
     Serial.print("Update failed, error: "); 
     //errorDecoder(mySHTC3.lastStatus);
     Serial.println();
-
-
-
   }
-
 }
 
 //void Data(){
   // May not use this. Can implement with just myLog.begin();
   // This is where we are going to do some data writing
-  
-
 //}
 
 void DataManage(){
@@ -328,5 +293,4 @@ void DataManage(){
   // Roll Files based on size 
   // Can I date stamp them YearMonthDay.csv when they are rolled?
   // Should this run after or before the data section? 
-
 }
