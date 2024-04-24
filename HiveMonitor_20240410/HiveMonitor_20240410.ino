@@ -30,9 +30,9 @@
 
 
 //RTC Clock
-RV8803 rtc;       //Declare an instance of the RV8803 class
+RV8803 rtc;       // Declare an instance of the RV8803 class
 SHTC3 mySHTC3;    // Declare an instance of the SHTC3 class
-
+OpenLog myLog;    // Declare an instance of the OpenLog class
 
 //Wireless network details.
 char ssid[] ="HiveMind";
@@ -208,6 +208,18 @@ void loop() {
       SHTC3_Status_TypeDef result = mySHTC3.update(); //Update the sensor
       InsideHive();
       
+      // Lets write some data to OpenLog Below is an example
+        /*    DATE,TIME-24:00,% Humidity,InternalTemp(C),OutsideTemp(C),Weight(lbs)
+            20240420,00:20,24,31,1,95
+            20240420,01:20,24,31,1,95
+            20240420,02:20,24,31,1,95
+            20240420,03:20,24,31,1,95
+      */
+ 
+
+      myLog.begin();
+      myLog.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegF())+","+String(OutCel)+",weigth");
+
 
 /*
   // TOBrien 20240410
@@ -269,6 +281,7 @@ void InsideHive(){
   {
     //Here is the sending to Openlog
 
+
     //Here is sending to the Webpage
 
 
@@ -293,9 +306,17 @@ void InsideHive(){
 
 }
 
-void Data(){
+//void Data(){
+  // May not use this. Can implement with just myLog.begin();
+  // This is where we are going to do some data writing
+  
 
+//}
+
+void DataManage(){
+  // I think this is where I want to be able to manage files 
+  // Roll Files based on size 
+  // Can I date stamp them YearMonthDay.csv when they are rolled?
+  // Should this run after or before the data section? 
 
 }
-
-
