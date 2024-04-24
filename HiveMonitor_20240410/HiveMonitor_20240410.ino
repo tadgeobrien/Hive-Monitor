@@ -39,6 +39,11 @@ char ssid[] ="HiveMind";
 char pass[] = "Password";  // Can I keep this open? What are the risks?
 int keyIndex = 0; //Only for WEP
 
+//Dealing with RTC 
+String logDate = rtc.stringDateUSA();
+String logTime = rtc.stringTime();
+
+
 // One wire setup.
 #define ONE_WIRE_BUS 5  //READ IS ON PIN 5
 OneWire oneWire(ONE_WIRE_BUS);
@@ -66,6 +71,7 @@ void setup() {
   mySHTC3.begin();  // This calls the SHTC3 sensor to start
   rtc.begin();      // This calls the RTC to start
   rtc.set24Hour();  // This sets RTC to 24 hour clock
+  
   
   Serial.begin(9600);
   while (!Serial){
@@ -113,7 +119,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+  rtc.updateTime();
 
 
   
@@ -221,7 +227,9 @@ void loop() {
             20240420,03:20,24,31,1,95
       */
       myLog.begin();
-      myLog.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+      //myLog.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+      myLog.println(logDate+","+logTime+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+
       myLog.syncFile();
 
 }
@@ -262,8 +270,6 @@ I may start it out the easy way and then look at the data and see what I like, d
 */
   if (rtc.updateTime() == true) //Updates the time variables from RTC
   {
-      String logDate = rtc.stringDateUSA();
-      String logTime = rtc.stringTime();
       Serial.print(logDate);
       Serial.print(",");
       Serial.print(logTime);
