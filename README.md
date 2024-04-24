@@ -37,6 +37,46 @@ The sensors that I will be using are as follows:
 - [X] Set up an Webserver and wireless connection to the Arduino. 
 
 
+
+## CSV Structure
+
+  CSV Structure should look like this. 
+  (24 entries per day and role log monthly would give at most 744 points of data.)
+  Could scale up if needed in the future.
+
+  Not sure if the date will go as I want, but I should try. Also not sure exactly if I would want it like
+  this or break it out Year,Month,Day,Hour,Minute,
+
+  DATE,TIME-24:00,% Humidity,InternalTemp(C),OutsideTemp(C),Weight(lbs)
+  20240420,00:20,24,31,1,95
+  20240420,01:20,24,31,1,95
+  20240420,02:20,24,31,1,95
+  20240420,03:20,24,31,1,95
+  20240420,04:20,24,31,1,95
+  20240420,05:20,24,31,1,95
+  20240420,06:20,24,31,1,95
+  20240420,07:20,24,31,1,95
+  20240420,08:20,24,31,1,95
+  20240420,09:20,24,31,1,95
+  20240420,10:20,24,31,1,95
+  20240420,11:20,24,31,1,95
+  20240420,12:20,24,31,1,95
+  20240420,13:20,24,31,1,95
+  20240420,14:20,24,31,1,95
+  20240420,15:20,24,31,1,95
+  20240420,16:20,24,31,1,95
+  20240420,17:20,24,31,1,95
+  20240420,18:20,24,31,1,95
+  20240420,19:20,24,31,1,95
+  20240420,20:20,24,31,1,95
+  20240420,21:20,24,31,1,95
+  20240420,22:20,24,31,1,95
+  20240420,23:20,24,31,1,95
+  
+
+
+  */
+
 # I2C addresses in Use
 I think I need to verify all of these, but I don't think that this is why OpenLog isn't working. 
 * RTC 0x64
