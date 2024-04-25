@@ -39,11 +39,6 @@ char ssid[] ="HiveMind";
 char pass[] = "Password";  // Can I keep this open? What are the risks?
 int keyIndex = 0; //Only for WEP
 
-//Dealing with RTC 
-//String logDate = rtc.stringDateUSA();
-//String logTime = rtc.stringTime();
-
-
 // One wire setup.
 #define ONE_WIRE_BUS 5  //READ IS ON PIN 5
 OneWire oneWire(ONE_WIRE_BUS);
@@ -119,7 +114,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  rtc.updateTime();
+  
 
 
   
@@ -228,8 +223,10 @@ void loop() {
       */
       myLog.begin();
       myLog.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
-      //myLog.println(logDate+","+logTime+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
-
+      //
+      //  I may want to look at simplifying some of this again I think I have too much in my functions that I don't really need
+      //
+      //Serial.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
       myLog.syncFile();
 
 }
