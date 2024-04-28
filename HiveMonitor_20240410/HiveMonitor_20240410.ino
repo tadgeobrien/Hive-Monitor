@@ -205,14 +205,14 @@ void loop() {
       }
 
       //Date and Time
-      myTime();
+      //myTime();
       
       //Outside temp in C
       OutsideTemp();  // This should be my function to check outside temp.
 
       //Inside hive monitoring
       SHTC3_Status_TypeDef result = mySHTC3.update(); //Update the sensor
-      InsideHive();
+      //InsideHive();
       
       // Lets write some data to OpenLog Below is an example
         /*    DATE,TIME-24:00,% Humidity,InternalTemp(C),OutsideTemp(C),Weight(lbs)
@@ -255,17 +255,19 @@ void OutsideTemp(){
   delay(3000);  //Testing - This is in milliseconds so it is 1 seconds.
   //delay(3600000);  //Production - This is 1 Hour. Also have a feeling that this messes up your sampling some how as it is in the void. 
 }
-
+/*  
 void myTime(){
   ////////////////////////////////////////////////////
   // Like to do the RTC here.
-/*
-Trying to decide how I want to do this. I can either just send the entire date from RTC which would be the easy way
-I could also put it in the format that I want Year-Month-Day-HH:MM:SS and either send that as seperate fields 
-in the CSV file or at least order it based on the date and then time 
 
-I may start it out the easy way and then look at the data and see what I like, dislike 
-*/
+// Trying to decide how I want to do this. I can either just send the entire date from RTC which would be the easy way
+// I could also put it in the format that I want Year-Month-Day-HH:MM:SS and either send that as seperate fields 
+// in the CSV file or at least order it based on the date and then time 
+
+// I may start it out the easy way and then look at the data and see what I like, dislike 
+
+  
+
   rtc.updateTime();
   if (rtc.updateTime() == true) //Updates the time variables from RTC
   {
@@ -281,8 +283,9 @@ I may start it out the easy way and then look at the data and see what I like, d
 
   delay(3000);
 }
- 
+*/ 
 
+/*
 void InsideHive(){
   //Function for getting the inside temp and humidity I believe humidity will come first
   if(mySHTC3.lastStatus == SHTC3_Status_Nominal)              // You can also assess the status of the last command by checking the ".lastStatus" member of the object
@@ -291,6 +294,7 @@ void InsideHive(){
     //Here is sending to the Webpage
 
     //Here is sending to serial data
+   
     Serial.print(" RH = "); 
     Serial.print(mySHTC3.toPercent());                        // "toPercent" returns the percent humidity as a floating point number
     Serial.print("%, T = "); 
@@ -306,11 +310,8 @@ void InsideHive(){
     Serial.println();
   }
 }
+*/
 
-//void Data(){
-  // May not use this. Can implement with just myLog.begin();
-  // This is where we are going to do some data writing
-//}
 
 void DataManage(){
   // I think this is where I want to be able to manage files 
