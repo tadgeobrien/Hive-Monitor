@@ -222,11 +222,12 @@ void loop() {
             20240420,03:20,24,31,1,95
       */
       myLog.begin();
-      myLog.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+      myLog.println("date,time,"+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
       //
       //  I may want to look at simplifying some of this again I think I have too much in my functions that I don't really need
       //
       //Serial.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+      Serial.println("date,time,"+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
       myLog.syncFile();
 
 }
@@ -270,10 +271,12 @@ I may start it out the easy way and then look at the data and see what I like, d
   {
       String logDate = rtc.stringDateUSA();
       String logTime = rtc.stringTime();
+      
       Serial.print(logDate);
       Serial.print(",");
       Serial.print(logTime);
       Serial.print(",");
+
   }
 
   delay(3000);
