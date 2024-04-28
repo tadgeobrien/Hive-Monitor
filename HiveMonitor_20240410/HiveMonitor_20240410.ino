@@ -227,7 +227,7 @@ void loop() {
       //  I may want to look at simplifying some of this again I think I have too much in my functions that I don't really need
       //
       //Serial.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
-      Serial.println("date,time,"+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+      Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
       myLog.syncFile();
 
 }
@@ -258,60 +258,24 @@ void OutsideTemp(){
 }
 
 void myTime(){
-  ////////////////////////////////////////////////////
-  // Like to do the RTC here.
-
+//Updating the time here
+//
 // Trying to decide how I want to do this. I can either just send the entire date from RTC which would be the easy way
 // I could also put it in the format that I want Year-Month-Day-HH:MM:SS and either send that as seperate fields 
 // in the CSV file or at least order it based on the date and then time 
 
 // I may start it out the easy way and then look at the data and see what I like, dislike 
 
-  
-
   rtc.updateTime();
   if (rtc.updateTime() == true) //Updates the time variables from RTC
   {
       String logDate = rtc.stringDateUSA();
       String logTime = rtc.stringTime();
-      
-      // Serial.print(logDate);
-      // Serial.print(",");
-      // Serial.print(logTime);
-      // Serial.print(",");
 
   }
 
   delay(3000);
 }
-
-
-/*
-void InsideHive(){
-  //Function for getting the inside temp and humidity I believe humidity will come first
-  if(mySHTC3.lastStatus == SHTC3_Status_Nominal)              // You can also assess the status of the last command by checking the ".lastStatus" member of the object
-  {
-    //Here is the sending to Openlog
-    //Here is sending to the Webpage
-
-    //Here is sending to serial data
-   
-    Serial.print(" RH = "); 
-    Serial.print(mySHTC3.toPercent());                        // "toPercent" returns the percent humidity as a floating point number
-    Serial.print("%, T = "); 
-    Serial.print(mySHTC3.toDegC());                           // "toDegF" and "toDegC" return the temperature as a flaoting point number in deg F and deg C respectively 
-    Serial.println(" deg C"); 
-
-    delay(3000);
-  }
-  else
-  {
-    Serial.print("Update failed, error: "); 
-    //errorDecoder(mySHTC3.lastStatus);
-    Serial.println();
-  }
-}
-*/
 
 
 void DataManage(){
