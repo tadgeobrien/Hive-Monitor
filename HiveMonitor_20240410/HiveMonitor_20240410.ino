@@ -222,14 +222,11 @@ void loop() {
             20240420,03:20,24,31,1,95
       */
       myLog.begin();
-      myLog.println("date,time,"+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
-      //
-      //  I may want to look at simplifying some of this again I think I have too much in my functions that I don't really need
-      //
-      //Serial.println("date,time,"+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+      // Printing this string to the OpenLog
+      myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+      // Printing the same string to Serial output so I can verify it      
       Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
       myLog.syncFile();
-
 }
 
 void printWiFiStatus(){
