@@ -250,8 +250,15 @@ void OutsideTemp(){
   // TOBrien 20240410 Maybe I can put the delay up higher so I am calling the functions without the delays.
   // Have to wait to test.
   //
-  delay(3000);  //Testing - This is in milliseconds so it is 1 seconds.
-  //delay(3600000);  //Production - This is 1 Hour. Also have a feeling that this messes up your sampling some how as it is in the void. 
+  // 3 Seconds  Testing
+  //delay(3000);
+
+  
+  // 3 Minutes  First Field Testing
+  delay(180000);
+  // One hour
+  //delay(3600000);
+
 }
 
 void myTime(){
@@ -271,7 +278,12 @@ void myTime(){
 
   }
 
-  delay(3000);
+  // 3 Seconds Testing
+  //delay(3000);
+  // 3 Minutes First field testing
+  delay(180000);
+  // One hour
+  //delay(3600000);
 }
 
 
