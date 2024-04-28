@@ -80,7 +80,7 @@ The sensors that I will be using are as follows:
 
 # I2C addresses in Use
 I think I need to verify all of these, but I don't think that this is why OpenLog isn't working. 
-* RTC 0x64
+* RTC 0x32
 * OpenLog 0x2A (42)
 
 # Arduino Code
@@ -106,10 +106,10 @@ I think I need to verify all of these, but I don't think that this is why OpenLo
 Maybe I should make this a table :)
 
 * Arduino Uno Wifi R2
-* Real Time Clock Sparkfun BOB-12708
-* Humidity Sensor SparkFun SEN-16467
+* [Real Time Clock Sparkfun BOB-16281](https://learn.sparkfun.com/tutorials/real-time-clock-module---rv-8803-qwiic-hookup-guide)
+* [Humidity Sensor SparkFun SEN-16467](https://learn.sparkfun.com/tutorials/sparkfun-humidity-sensor-breakout---shtc3-qwiic-hookup-guide)
 * Onewire Temperature sensor
-* Openlog Sparkfun ####
+* [Sparkfun Qwiix OpenLog](https://learn.sparkfun.com/tutorials/qwiic-openlog-hookup-guide)
 * Sparkfun QWICC shield for Arduino
 * Load Cells
 
