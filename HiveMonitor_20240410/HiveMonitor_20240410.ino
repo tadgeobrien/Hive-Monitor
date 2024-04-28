@@ -205,7 +205,7 @@ void loop() {
       }
 
       //Date and Time
-      //myTime();
+      myTime();
       
       //Outside temp in C
       OutsideTemp();  // This should be my function to check outside temp.
@@ -246,8 +246,9 @@ void OutsideTemp(){
   // Function for getting the outside temperature. Use this in void loop.
   sensors.requestTemperatures();
   OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
-  Serial.print(" Outside C = "); // TOBrien 20240412 Commented out since I should see it on the web UI
-  Serial.print(OutCel);       // TOBrien 20240412 Commented out since I should see it on the web UI
+  
+  //Serial.print(" Outside C = "); // TOBrien 20240412 Commented out since I should see it on the web UI
+  //Serial.print(OutCel);       // TOBrien 20240412 Commented out since I should see it on the web UI
   //
   // TOBrien 20240410 Maybe I can put the delay up higher so I am calling the functions without the delays.
   // Have to wait to test.
@@ -255,7 +256,7 @@ void OutsideTemp(){
   delay(3000);  //Testing - This is in milliseconds so it is 1 seconds.
   //delay(3600000);  //Production - This is 1 Hour. Also have a feeling that this messes up your sampling some how as it is in the void. 
 }
-/*  
+
 void myTime(){
   ////////////////////////////////////////////////////
   // Like to do the RTC here.
@@ -274,16 +275,16 @@ void myTime(){
       String logDate = rtc.stringDateUSA();
       String logTime = rtc.stringTime();
       
-      Serial.print(logDate);
-      Serial.print(",");
-      Serial.print(logTime);
-      Serial.print(",");
+      // Serial.print(logDate);
+      // Serial.print(",");
+      // Serial.print(logTime);
+      // Serial.print(",");
 
   }
 
   delay(3000);
 }
-*/ 
+
 
 /*
 void InsideHive(){
