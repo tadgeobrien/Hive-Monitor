@@ -167,7 +167,9 @@ void loop() {
               //client.print(" ");
               
               //TOBrien implement the printing of the Data to the web interface
-              client.print("Outside Temperature = ");
+              client.println(String(rtc.stringDateUSA()));
+              client.println(String(rtc.stringTime()));
+              client.print("<br>Outside Temperature = ");
               client.println(OutCel);
               client.print("<br>Inside Relative Humidty = ");
               client.print(mySHTC3.toPercent());
@@ -175,6 +177,7 @@ void loop() {
               client.print("Inside Temperature = ");
               client.print(mySHTC3.toDegF());
               client.println(" deg F"); //Need to change to C
+              client.println("<br>Weight");
 
               //HTTP response ends with a blank line.
               client.println();
@@ -253,9 +256,10 @@ void OutsideTemp(){
   // 3 Seconds  Testing
   //delay(3000);
 
-  
+  //Mathing the AP 
+  delay(10000);
   // 3 Minutes  First Field Testing
-  delay(180000);
+  //delay(180000);
   // One hour
   //delay(3600000);
 
@@ -280,8 +284,9 @@ void myTime(){
 
   // 3 Seconds Testing
   //delay(3000);
+  delay(10000);
   // 3 Minutes First field testing
-  delay(180000);
+  //delay(180000);
   // One hour
   //delay(3600000);
 }
