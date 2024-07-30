@@ -120,14 +120,26 @@ Maybe I should make this a table :)
 * [Load Sensor - 50kg (Generic)](https://www.sparkfun.com/products/10245) Quantity 4
 * [Temperature Sensor - Waterproof (DS18B20)](https://www.sparkfun.com/products/11050) Quantity 1
 * [SparkFun Air Quality Breakout - CCS811](https://www.sparkfun.com/products/14193) Quantity 1
+* 4 - [Load Sensor](https://www.sparkfun.com/products/10245) Double check what weight I ordered.
+* 1 - [SparkFun Load Sensor Combinator](https://www.sparkfun.com/products/13878) Also can have a DS18B20 wired in to measure temperature for variance. Maybe helpful for the graphing in winter. Not sure how to configure that part of it yet.
+* 1 - [SparkFun Load Cell Amplifier - HX711](https://www.sparkfun.com/products/13879)
 
 
 
 
+# Load Cell Notes
+
+Note: If you are hooking together four of the SparkFun Load Sensors using the Combinator board, you should position the four load sensors equidistant from each other, just like the bathroom scales shown in this tutorial.
 
 
+## Load Cell Wiring
+For load sensors, there isn't a set color coded standard. The hacked home scale can have different wire colors. Comparing the scale pictured above with the load sensor schematic, while the black wires matched, the red and white wires were swapped. Also, only two of the four sensors used a white wire for the 'center tap' of the load sensor, the other two used green. I connected the black wires to "-", the red to "+", and the white and green wires to "C".
+
+To determine how to hook up your single strain gauge load cells to the combinator, measure the resistance with a multimeter between the three wires. You should find a larger resistance (close to double) between a pair. In our example, the resistance between red and black was 1.6 kΩ (i.e. 1600Ω), and the resistance between white/green and red was 800 Ω. Therefore, the center tap to the strain gauge is the white/green wire. The center tap or center pin of your strain gauge connects to the "C" pin on the combinator. The larger resistance wires (red and black in this example) connect to the "+" and "-" pins on the combinator.
 
 
+## Tutorials
+* [Load cell](https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide?_ga=2.251188806.1397592904.1630879153-851011404.1618400912)
 
 
 
@@ -194,8 +206,8 @@ In the one from Sparkfun he hacks a premade scale. I could go to a second hand s
 
 # Libraries Used
 
-HX711 https://github.com/bogde/HX711
-
+* [HXHX711 Arduino Library](https://github.com/bogde/HX711)
+* [OneWire](https://www.arduino.cc/reference/en/libraries/onewire/)
 
 
 
@@ -206,3 +218,26 @@ Here is a list of things like Youtube videos that I used for reference.
 [Arduino Scale with HX711 and 50kg Bathroom Scale Load Cells | Step by Step Guide.](https://www.youtube.com/watch?v=LIuf2egMioA)
 
 [Load Cell Amplifier HX711 Breakout Hookup Guide ](https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide)
+
+
+====
+
+# Older Stuff from initial hive spy project.
+
+# Maybe Helpful
+* https://github.com/fubar2/piloadcell
+
+
+# Wireless AP part
+I want to make it so that basically it broadcasts an SSID that you can connect to and see what the Hive Spy has been collecting.
+
+https://raspap.com/
+
+or HospAPD  (This is likely going to be around longer I would think.)
+https://learn.adafruit.com/setting-up-a-raspberry-pi-as-a-wifi-access-point/compiling-hostapd?view=all
+https://hawksites.newpaltz.edu/myerse/2018/06/08/hostapd-on-raspberry-pi/
+https://www.instructables.com/Raspberry-Pi-Wifi-Hotspot/
+
+
+
+
