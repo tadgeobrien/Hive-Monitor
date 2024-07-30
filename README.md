@@ -26,10 +26,10 @@ The sensors that I will be using are as follows:
 - [ ] Implement battery power reading on webpage and openlog?
 - [ ] Implement solar power 
 - [ ] Implement way to download Data from web page
-- [ ] Have Openlog recieving all current values of data
-- [ ] Have Openlog implemented and getting data
+- [X] Have Openlog recieving all current values of data
+- [X] Have Openlog implemented and getting data
 - [ ] Have RTC implemented on website
-- [ ] Have RTC working
+- [X] Have RTC working
 - [X] Have Inside temp and humidity report on website
 - [X] Have Inside humidity working
 - [X] Have Inside temp working 
