@@ -27,12 +27,19 @@
 #include <SparkFun_RV8803.h>    //Real Time Clock 
 #include <SparkFun_SHTC3.h>     //Using for inside Humidity and Temp
 #include <SparkFun_Qwiic_OpenLog_Arduino_Library.h>
+#include "HX711.h"
+
+//Scale HX711 circuit wiring
+const int LOADCELL_DOUT_PIN = 2;
+const int LOADCELL_SCK_PIN = 3;
+
 
 
 //Adding Classes
 RV8803 rtc;       // Declare an instance of the RV8803 class
 SHTC3 mySHTC3;    // Declare an instance of the SHTC3 class
 OpenLog myLog;    // Declare an instance of the OpenLog class
+HX711 scale;      // Declare an instance of HX711 scale class
 
 //Wireless network details.
 char ssid[] ="HiveMind";
@@ -66,7 +73,7 @@ void setup() {
   mySHTC3.begin();  // This calls the SHTC3 sensor to start
   rtc.begin();      // This calls the RTC to start
   rtc.set24Hour();  // This sets RTC to 24 hour clock
-  
+  scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN); // Setting up for the Scale. 
   
   Serial.begin(9600);
   while (!Serial){
@@ -297,4 +304,15 @@ void DataManage(){
   // Roll Files based on size 
   // Can I date stamp them YearMonthDay.csv when they are rolled?
   // Should this run after or before the data section? 
+}
+
+void HiveWeight(){
+    if (scale.is_ready()) {
+    long reading = scale.read();
+//    Serial.print("HX711 reading: ");
+//    Serial.println(reading);
+//  } else {
+//    Serial.println("HX711 not found.");
+  }
+  //delay(1000); //Guessing I can do this elsewhere. 
 }
