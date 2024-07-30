@@ -22,7 +22,7 @@ The sensors that I will be using are as follows:
 
 ## To Dos
 - [ ] Do I need a way to update the current data on the webpage from the webpage without adding to the Openlog file?
-- [ ] Implement Weight measures
+- [ ] Implement Weight measures (may leave with weight errors currently.)
 - [ ] Implement battery power reading on webpage and openlog?
 - [ ] Implement solar power 
 - [ ] Implement way to download Data from web page
