@@ -145,7 +145,7 @@ void loop() {
     WiFiClient client = server.available(); // listen for incoming clients
 
     if (client){                      // if you get a client,
-      Serial.println("newe client");  // print a message out the serial port
+      Serial.println("new client");  // print a message out the serial port
       String currentLine = "";        // make a String to hold incoming data from the client
       while (client.connected()){     // loop while the client's connected
         if (client.available()){      // if there's bytes to read from the client,
@@ -185,6 +185,7 @@ void loop() {
               client.print(mySHTC3.toDegF());
               client.println(" deg F"); //Need to change to C
               client.println("<br>Weight");
+//              client.println(reading());
 
               //HTTP response ends with a blank line.
               client.println();
@@ -233,9 +234,9 @@ void loop() {
       */
       myLog.begin();
       // Printing this string to the OpenLog
-      myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+      myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",");
       // Printing the same string to Serial output so I can verify it      
-      Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weigth");
+      Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",");
       myLog.syncFile();
 }
 
