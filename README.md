@@ -22,7 +22,7 @@ The sensors that I will be using are as follows:
 
 ## To Dos
 - [ ] Do I need a way to update the current data on the webpage from the webpage without adding to the Openlog file?
-- [ ] Implement Weight measures (may leave with weight errors currently.) https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide/all#installing-the-hx711-arduino-library-and-examples
+- [ ] Implement Weight measures (may leave with weight errors currently.) https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide/all#installing-the-hx711-arduino-library-and-examples https://github.com/bogde/HX711/
 - [ ] Implement battery power reading on webpage and openlog?
 - [ ] Implement solar power 
 - [ ] Implement way to download Data from web page
