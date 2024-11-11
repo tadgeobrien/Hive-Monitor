@@ -239,5 +239,8 @@ https://hawksites.newpaltz.edu/myerse/2018/06/08/hostapd-on-raspberry-pi/
 https://www.instructables.com/Raspberry-Pi-Wifi-Hotspot/
 
 
+# Links for File Download
 
+https://forum.arduino.cc/t/file-download-with-arduino-web-server/160140
+https://forum.arduino.cc/t/download-files-on-the-wifiwebserver/692379
 
