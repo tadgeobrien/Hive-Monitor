@@ -1,3 +1,10 @@
+# Development Log
+
+20250703 @ 18:02 - 
+  TOBrien made a copy of the old hive monitor from 2024 and tried to get the weight to print. Currenlty not getting weight to print, but also appears that the one wire (external temp) is broken as I am seeing 
+  -127 as a value. It was working before, but I have no idea what code I was actually running. I think I am going to make a text weight set of code and see if I can get that working with out anything else. 
+
+
 # Hive Montitor
 
 NOTE--- I used the Sparkfun Qwiic shield which was originaly designed for the Uno. However the Uno Wifi Rev2 that I have has two pins that are different. 
@@ -26,9 +33,9 @@ The sensors that I will be using are as follows:
 - [ ] Implement battery power reading on webpage and openlog?
 - [ ] Implement solar power 
 - [ ] Implement way to download Data from web page
+- [ ] Have RTC implemented on website
 - [X] Have Openlog recieving all current values of data
 - [X] Have Openlog implemented and getting data
-- [ ] Have RTC implemented on website
 - [X] Have RTC working
 - [X] Have Inside temp and humidity report on website
 - [X] Have Inside humidity working
@@ -41,40 +48,49 @@ The sensors that I will be using are as follows:
 
 ## CSV Structure
 
-  CSV Structure should look like this. 
-  (24 entries per day and role log monthly would give at most 744 points of data.)
-  Could scale up if needed in the future.
+CSV Structure should look like this. 
+(24 entries per day and role log monthly would give at most 744 points of data.)
+Could scale up if needed in the future.
 
-  Not sure if the date will go as I want, but I should try. Also not sure exactly if I would want it like
-  this or break it out Year,Month,Day,Hour,Minute,
+Not sure if the date will go as I want, but I should try. Also not sure exactly if I would want it like
+this or break it out Year,Month,Day,Hour,Minute,
 
-  DATE,TIME-24:00,% Humidity,InternalTemp(C),OutsideTemp(C),Weight(lbs)
-  20240420,00:20,24,31,1,95
-  20240420,01:20,24,31,1,95
-  20240420,02:20,24,31,1,95
-  20240420,03:20,24,31,1,95
-  20240420,04:20,24,31,1,95
-  20240420,05:20,24,31,1,95
-  20240420,06:20,24,31,1,95
-  20240420,07:20,24,31,1,95
-  20240420,08:20,24,31,1,95
-  20240420,09:20,24,31,1,95
-  20240420,10:20,24,31,1,95
-  20240420,11:20,24,31,1,95
-  20240420,12:20,24,31,1,95
-  20240420,13:20,24,31,1,95
-  20240420,14:20,24,31,1,95
-  20240420,15:20,24,31,1,95
-  20240420,16:20,24,31,1,95
-  20240420,17:20,24,31,1,95
-  20240420,18:20,24,31,1,95
-  20240420,19:20,24,31,1,95
-  20240420,20:20,24,31,1,95
-  20240420,21:20,24,31,1,95
-  20240420,22:20,24,31,1,95
-  20240420,23:20,24,31,1,95
+DATE,TIME-24:00,% Humidity,InternalTemp(C),OutsideTemp(C),Weight(lbs)
+20240420,00:20,24,31,1,95
+20240420,01:20,24,31,1,95
+20240420,02:20,24,31,1,95
+20240420,03:20,24,31,1,95
+20240420,04:20,24,31,1,95
+20240420,05:20,24,31,1,95
+20240420,06:20,24,31,1,95
+20240420,07:20,24,31,1,95
+20240420,08:20,24,31,1,95
+20240420,09:20,24,31,1,95
+20240420,10:20,24,31,1,95
+20240420,11:20,24,31,1,95
+20240420,12:20,24,31,1,95
+20240420,13:20,24,31,1,95
+20240420,14:20,24,31,1,95
+20240420,15:20,24,31,1,95
+20240420,16:20,24,31,1,95
+20240420,17:20,24,31,1,95
+20240420,18:20,24,31,1,95
+20240420,19:20,24,31,1,95
+20240420,20:20,24,31,1,95
+20240420,21:20,24,31,1,95
+20240420,22:20,24,31,1,95
+20240420,23:20,24,31,1,95
   
-
+### CSV Example 20250703  
+07/03/2025,17:37:23,72.45,23.56,23.00,weigth
+07/03/2025,17:37:43,72.44,23.55,23.00,weigth
+07/03/2025,17:38:04,72.43,23.52,23.00,weigth
+07/03/2025,17:38:25,72.41,23.52,23.00,weigth
+07/03/2025,17:38:45,72.38,23.52,22.94,weigth
+07/03/2025,17:39:06,72.36,23.52,23.00,weigth
+07/03/2025,17:39:26,72.42,23.51,23.00,weigth
+07/03/2025,17:39:47,72.45,23.51,23.00,weigth
+07/03/2025,17:40:08,72.43,23.53,23.00,weigth
 
   */
 
@@ -140,13 +156,6 @@ To determine how to hook up your single strain gauge load cells to the combinato
 
 ## Tutorials
 * [Load cell](https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide?_ga=2.251188806.1397592904.1630879153-851011404.1618400912)
-
-
-
-
-
-
-
 
 
 
