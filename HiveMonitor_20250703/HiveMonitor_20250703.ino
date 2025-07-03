@@ -29,8 +29,9 @@
 #include "HX711.h"
 
 //Scale HX711 circuit wiring
-const int LOADCELL_DOUT_PIN = 2;
-const int LOADCELL_SCK_PIN = 3;
+const int LOADCELL_DOUT = 2;
+const int LOADCELL_SCK = 3;
+#define calibration_factor -7050.0  //THis is a value that I should define. Right now pulling from sparkfun example.
 
 //Adding Classes
 RV8803 rtc;       // Declare an instance of the RV8803 class
@@ -57,7 +58,7 @@ float InFah=0;  // Outside Farenheit May not use.
 float InHum=0;  // Inside Humidity 
 
 // Setting Up Weight Sensor
-long HiveWeight= 0;
+
 
 //LED Testing tobrien 20240410 keep or remove?
 int led = LED_BUILTIN;
@@ -73,7 +74,7 @@ void setup() {
   mySHTC3.begin();  // This calls the SHTC3 sensor to start
   rtc.begin();      // This calls the RTC to start
   rtc.set24Hour();  // This sets RTC to 24 hour clock
-  scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN); // Setting up for the Scale. 
+  scale.begin(LOADCELL_DOUT, LOADCELL_SCK); // Setting up for the Scale. 
   
   Serial.begin(9600);
   while (!Serial){
@@ -208,7 +209,7 @@ void loop() {
                 }
            }
         }
-        // close the connectoin
+        // close the connection
         client.stop();
         Serial.println("Client disconnected");
       }
@@ -224,9 +225,10 @@ void loop() {
       //InsideHive();
       
     //Hive Weight
-    if (scale.is_ready()){
-      long HiveWeight = scale.read();
-    }
+    scale.set_scale(calibration_factor);
+    scale.tare(); //Assuming that you have only the weight that you want 
+    
+    
 
 
 
@@ -239,12 +241,12 @@ void loop() {
       */
       myLog.begin();
       // Printing this string to the OpenLog
-      myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weight");
+      myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+ scale.get_units());
       // Printing the same string to Serial output so I can verify it      
       //Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weight");
       //
       // Just leaving this here since I am getting a declareation error. 
-      Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+HiveWeight);  
+      Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+ scale.get_units());  
       //
       myLog.syncFile();
 }
