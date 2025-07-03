@@ -225,6 +225,13 @@ void loop() {
       SHTC3_Status_TypeDef result = mySHTC3.update(); //Update the sensor
       //InsideHive();
       
+    //Hive Weight
+    //if (scale.is_ready()){
+    //  long HiveWeight = scale.read();
+    //}
+
+
+
       // Lets write some data to OpenLog Below is an example
         /*    DATE,TIME-24:00,% Humidity,InternalTemp(C),OutsideTemp(C),Weight(lbs)
             20240420,00:20,24,31,1,95
@@ -234,9 +241,13 @@ void loop() {
       */
       myLog.begin();
       // Printing this string to the OpenLog
-      myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",");
+      myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weight");
       // Printing the same string to Serial output so I can verify it      
-      Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",");
+      Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weight");
+      //
+      // Just leaving this here since I am getting a declareation error. 
+      //Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+HiveWeight);  
+      //
       myLog.syncFile();
 }
 
@@ -307,13 +318,4 @@ void DataManage(){
   // Should this run after or before the data section? 
 }
 
-void HiveWeight(){
-    if (scale.is_ready()) {
-    long reading = scale.read();
-//    Serial.print("HX711 reading: ");
-//    Serial.println(reading);
-//  } else {
-//    Serial.println("HX711 not found.");
-  }
-  //delay(1000); //Guessing I can do this elsewhere. 
-}
+
