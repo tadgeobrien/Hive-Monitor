@@ -57,8 +57,6 @@ float InCel=0;  // Inside Celcius temp
 float InFah=0;  // Outside Farenheit May not use.
 float InHum=0;  // Inside Humidity 
 
-// Setting Up Weight Sensor
-
 
 //LED Testing tobrien 20240410 keep or remove?
 int led = LED_BUILTIN;
@@ -76,6 +74,11 @@ void setup() {
   rtc.set24Hour();  // This sets RTC to 24 hour clock
   scale.begin(LOADCELL_DOUT, LOADCELL_SCK); // Setting up for the Scale. 
   
+  // Setting Up Weight Sensor
+  scale.set_scale(calibration_factor);
+  scale.tare(); //Assuming that you have only the weight that you want 
+
+
   Serial.begin(9600);
   while (!Serial){
     ; //wait for serial port to connect. Needed for Native USB  Port only -- Huh?
@@ -225,13 +228,8 @@ void loop() {
       //InsideHive();
       
     //Hive Weight
-    scale.set_scale(calibration_factor);
-    scale.tare(); //Assuming that you have only the weight that you want 
+    // If you needed to do the basic math to adjust your final weight you could do something here.
     
-    
-
-
-
       // Lets write some data to OpenLog Below is an example
         /*    DATE,TIME-24:00,% Humidity,InternalTemp(C),OutsideTemp(C),Weight(lbs)
             20240420,00:20,24,31,1,95
