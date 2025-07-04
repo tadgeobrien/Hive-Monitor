@@ -17,6 +17,8 @@
 //        then you have to think about he file manipulation. If you pull the SD card who cares. (I will pull the SD at the end of the season I think regrdless.
 //  
 //        Perhaps I do a file write a week and download a weeks worth of data? That would make a lot of sense. What is my weekly start and end date? 
+//
+//        Still want to figure out how I can do the data sampling in larger time periods with still having the wifi access point being available. 
 ////
 
 //// Libraries I am using
@@ -230,7 +232,7 @@ void loop() {
     //Hive Weight
     // If you needed to do the basic math to adjust your final weight you could do something here.
     
-      // Lets write some data to OpenLog Below is an example
+l      // Lets write some data to OpenLog Below is an example
         /*    DATE,TIME-24:00,% Humidity,InternalTemp(C),OutsideTemp(C),Weight(lbs)
             20240420,00:20,24,31,1,95
             20240420,01:20,24,31,1,95
