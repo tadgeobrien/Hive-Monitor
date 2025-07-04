@@ -1,8 +1,15 @@
 # Development Log
 
-20250703 @ 18:02 - 
+## 20250703 @ 18:02 - 
   TOBrien made a copy of the old hive monitor from 2024 and tried to get the weight to print. Currenlty not getting weight to print, but also appears that the one wire (external temp) is broken as I am seeing 
   -127 as a value. It was working before, but I have no idea what code I was actually running. I think I am going to make a text weight set of code and see if I can get that working with out anything else. 
+  
+  Currenlty working on the weight. Appears to be holding a decent "lbs" related to what I think I should get. 
+  Next set of steps. 
+  
+- [ ] I think I should get a hive body and mout it to the physical box that I have and apply wire the basic electronics. Teflon tap around humidity sensor and 1/8" wire mesh around the hole. 
+- [ ] Then I should look at how I am going to secure and waterproof the stuff that I have. 
+- [ ] Then start to look at how are you going to address the solar component of this. 
 
 
 # Hive Montitor
@@ -29,11 +36,11 @@ The sensors that I will be using are as follows:
 
 ## To Dos
 - [ ] Do I need a way to update the current data on the webpage from the webpage without adding to the Openlog file?
-- [ ] Implement Weight measures (may leave with weight errors currently.) https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide/all#installing-the-hx711-arduino-library-and-examples https://github.com/bogde/HX711/
 - [ ] Implement battery power reading on webpage and openlog?
 - [ ] Implement solar power 
 - [ ] Implement way to download Data from web page
 - [ ] Have RTC implemented on website
+- [X] Implement Weight measures (may leave with weight errors currently.) https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide/all#installing-the-hx711-arduino-library-and-examples https://github.com/bogde/HX711/
 - [X] Have Openlog recieving all current values of data
 - [X] Have Openlog implemented and getting data
 - [X] Have RTC working
