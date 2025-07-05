@@ -8,8 +8,10 @@
   Next set of steps. 
   
 - [ ] I think I should get a hive body and mout it to the physical box that I have and apply wire the basic electronics. Teflon tap around humidity sensor and 1/8" wire mesh around the hole. 
+- [ ] Need an outdoor electronics box to put underneath to hold the scale components.
 - [ ] Then I should look at how I am going to secure and waterproof the stuff that I have. 
 - [ ] Then start to look at how are you going to address the solar component of this. 
+- [ ] Clear silicoln to cover any electronics that might be exposed (wiring mostly) 
 
 
 # Hive Montitor
