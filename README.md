@@ -148,7 +148,7 @@ Maybe I should make this a table :)
 * 4 - [Load Sensor](https://www.sparkfun.com/products/10245) Double check what weight I ordered.
 * 1 - [SparkFun Load Sensor Combinator](https://www.sparkfun.com/products/13878) Also can have a DS18B20 wired in to measure temperature for variance. Maybe helpful for the graphing in winter. Not sure how to configure that part of it yet.
 * 1 - [SparkFun Load Cell Amplifier - HX711](https://www.sparkfun.com/products/13879)
-
+* Just another example https://pmc.ncbi.nlm.nih.gov/articles/PMC7248914/
 
 
 
