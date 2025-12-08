@@ -7,8 +7,8 @@
   Currenlty working on the weight. Appears to be holding a decent "lbs" related to what I think I should get. 
   Next set of steps. 
   
-- [ ] I think I should get a hive body and mout it to the physical box that I have and apply wire the basic electronics. Teflon tap around humidity sensor and 1/8" wire mesh around the hole. 
-- [ ] Need an outdoor electronics box to put underneath to hold the scale components.
+- [X] I think I should get a hive body and mout it to the physical box that I have and apply wire the basic electronics. Teflon tap around humidity sensor and 1/8" wire mesh around the hole. 
+- [X] Need an outdoor electronics box to put underneath to hold the scale components.
 - [ ] Then I should look at how I am going to secure and waterproof the stuff that I have. 
 - [ ] Then start to look at how are you going to address the solar component of this. 
 - [ ] Clear silicoln to cover any electronics that might be exposed (wiring mostly) 
@@ -214,6 +214,16 @@ Thinking if you use RJ45 as connectors you'd want to look at [waterproof enclosu
 * May need to have a lenght of cable for powering things. Not sure how I would do this. Most likely send the power from the panel to the inverter close to the actual sensors. (4mm pv cable for solar power. It is DC) I think that the distance would be about 20 feet or so for this application. Othe concerns would be grounding.
 
 * [Open Source Solar System](https://opensource.com/article/22/12/open-source-solar-power-home) Just some notes on a solar system.
+
+### Solar Implementation
+* [ Sunny Buddy Solar Charger V13 Hookup Guide](https://learn.sparkfun.com/tutorials/sunny-buddy-solar-charger-v13-hookup-guide-) This is what I have purchased.
+* I would like a way to read the batter power from this if possible.
+* Looks like there is some tuning needed for this prior to use.
+* [Sunny Buddy product page](https://www.sparkfun.com/sparkfun-sunny-buddy-mppt-solar-charger.html)
+
+
+### Battery Implementatoin
+* Should be able to get everything set up so that it will run on batteries and the solar is the charging piece.
 
 
 ## Load Cells Requirements
