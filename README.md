@@ -12,7 +12,7 @@
 - [ ] Then I should look at how I am going to secure and waterproof the stuff that I have. 
 - [ ] Then start to look at how are you going to address the solar component of this. 
 - [ ] Clear silicoln to cover any electronics that might be exposed (wiring mostly) 
-
+- [ ] Define sample rate. I think that every 30 minutes would be sufficent. It would give you a sense of material coming in and going out I would think.
 
 # Hive Montitor
 
@@ -41,7 +41,7 @@ The sensors that I will be using are as follows:
 - [ ] Implement battery power reading on webpage and openlog?
 - [ ] Implement solar power 
 - [ ] Implement way to download Data from web page
-- [ ] Have RTC implemented on website
+- [X] Have RTC implemented on website TOBRIEN 20251229 I think that this is working right now.
 - [X] Implement Weight measures (may leave with weight errors currently.) https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide/all#installing-the-hx711-arduino-library-and-examples https://github.com/bogde/HX711/
 - [X] Have Openlog recieving all current values of data
 - [X] Have Openlog implemented and getting data
