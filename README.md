@@ -9,7 +9,7 @@
   
 - [X] I think I should get a hive body and mout it to the physical box that I have and apply wire the basic electronics. Teflon tap around humidity sensor and 1/8" wire mesh around the hole. 
 - [X] Need an outdoor electronics box to put underneath to hold the scale components.
-- [ ] Then I should look at how I am going to secure and waterproof the stuff that I have. 
+- [ ] Then I should look at how I am going to secure and waterproof the stuff that I have. Most likely silicoln over wires and connections. 
 - [ ] Then start to look at how are you going to address the solar component of this. 
 - [ ] Clear silicoln to cover any electronics that might be exposed (wiring mostly) 
 - [ ] Define sample rate. I think that every 30 minutes would be sufficent. It would give you a sense of material coming in and going out I would think.
@@ -120,6 +120,8 @@ I think I need to verify all of these, but I don't think that this is why OpenLo
 * InHum is for the inside humidity. Not sure of the measurement.
 
 ## Functions
+You should look at what your functions are actually returning here.
+
 * void printWiFiStatus()
 * void OutsideTemp()
 * void InsideTemp()
@@ -163,6 +165,13 @@ Note: If you are hooking together four of the SparkFun Load Sensors using the Co
 For load sensors, there isn't a set color coded standard. The hacked home scale can have different wire colors. Comparing the scale pictured above with the load sensor schematic, while the black wires matched, the red and white wires were swapped. Also, only two of the four sensors used a white wire for the 'center tap' of the load sensor, the other two used green. I connected the black wires to "-", the red to "+", and the white and green wires to "C".
 
 To determine how to hook up your single strain gauge load cells to the combinator, measure the resistance with a multimeter between the three wires. You should find a larger resistance (close to double) between a pair. In our example, the resistance between red and black was 1.6 kΩ (i.e. 1600Ω), and the resistance between white/green and red was 800 Ω. Therefore, the center tap to the strain gauge is the white/green wire. The center tap or center pin of your strain gauge connects to the "C" pin on the combinator. The larger resistance wires (red and black in this example) connect to the "+" and "-" pins on the combinator.
+
+## Load Cell SUDO code
+
+Load cell comes online.
+Load cell has the option to TARE via the web UI
+  If tare is initiated it updates this information and then reports that it was successful.
+  If no tare is initiated it starts taking reading or waits for tare initiation.
 
 
 ## Tutorials
