@@ -37,10 +37,12 @@ The sensors that I will be using are as follows:
 * Outside Temperature Measure
 
 ## To Dos
+- [ ] Should do something so I can zero the scale. Use the wifi control to do this?
 - [ ] Do I need a way to update the current data on the webpage from the webpage without adding to the Openlog file?
 - [ ] Implement battery power reading on webpage and openlog?
 - [ ] Implement solar power 
-- [ ] Implement way to download Data from web page
+- [ ] Implement way to download Data from web pagea
+- [ ] Set up low power mode on anything that can do it. Ie WiFi.lowPowerMode() for the wifi.
 - [X] Have RTC implemented on website TOBRIEN 20251229 I think that this is working right now.
 - [X] Implement Weight measures (may leave with weight errors currently.) https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide/all#installing-the-hx711-arduino-library-and-examples https://github.com/bogde/HX711/
 - [X] Have Openlog recieving all current values of data
