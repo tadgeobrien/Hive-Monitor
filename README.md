@@ -174,6 +174,7 @@ Load cell has the option to TARE via the web UI
   If no tare is initiated it starts taking reading or waits for tare initiation.
 
 
+
 ## Tutorials
 * [Load cell](https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide?_ga=2.251188806.1397592904.1630879153-851011404.1618400912)
 
