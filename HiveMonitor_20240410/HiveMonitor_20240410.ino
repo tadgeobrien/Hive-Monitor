@@ -19,7 +19,6 @@
 //        Perhaps I do a file write a week and download a weeks worth of data? That would make a lot of sense. What is my weekly start and end date? 
 
 
-
 //// Libraries I am using
 #include <WiFiNINA.h>           //Wifi Library
 #include <OneWire.h>            // Takes in the data.
@@ -32,7 +31,6 @@
 //Scale HX711 circuit wiring
 const int LOADCELL_DOUT_PIN = 2; // Data out pin
 const int LOADCELL_SCK_PIN = 3;  // Clock pin
-
 
 
 //Adding Classes
@@ -61,13 +59,14 @@ float InHum=0;  // Inside Humidity
 
 //LED Testing tobrien 20240410 keep or remove?
 int led = LED_BUILTIN;
-int status = WL_IDLE_STATUS;
-
+int status = WL_IDLE_STATUS;  // TOBRIEN 20260118. I think this is actually related to the wifi not the LED.
 //Defines server port.
 WiFiServer server(80);
 
 void setup() {
   // put your setup code here, to run once:
+
+  pinMode(LED_BUILTIN, OUTPUT);   // TOBRIEN 20260118. Think I would like to add an external LED. Not sure if I have to do anything special other than wire it up.
 
   Wire.begin();     // This is to start the i2c bus I believe
   mySHTC3.begin();  // This calls the SHTC3 sensor to start
@@ -106,7 +105,6 @@ void setup() {
           Serial.println("Creating access point failed");
           //Don't continue
           while(true);
-          
           }
 
           //Wait 10 seconds for connection
@@ -122,9 +120,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   
-
-
-  
+ 
   ////////////////////////////////////////////////////
   //  This is the Wifi AP
   ////////////////////////////////////////////////////
@@ -285,6 +281,8 @@ void OutsideTemp(){
 }
 
 void myTime(){
+// TOBrien 20260118 Should really return a value on this and pass it differently.
+
 //Updating the time here
 //
 // Trying to decide how I want to do this. I can either just send the entire date from RTC which would be the easy way
