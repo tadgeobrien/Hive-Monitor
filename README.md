@@ -28,6 +28,10 @@ NOTE--- I used the Sparkfun Qwiic shield which was originaly designed for the Un
 
 Of course now they have the Uno R4 Wifi which has a Qwiic connector built in GRRRR https://store-usa.arduino.cc/products/uno-r4-wifi .
 
+## Winterizing
+Not sure how the batteries would hold up in the winter. Would really need to look at this as I don't want to start a fire. 
+
+
 ## Goal
 
 Create a simple set of sensors to monitor a beehive of mine. It will be solar powered and not connected to any network. 
