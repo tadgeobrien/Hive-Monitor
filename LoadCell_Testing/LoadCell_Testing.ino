@@ -24,3 +24,25 @@ void loop() {
   delay(1000);
   
 }
+
+
+
+
+
+/*
+Some of the results
+
+HX711 reading: -2052591
+HX711 reading: -1669633
+HX711 reading: -458928
+HX711 reading: -126968
+HX711 reading: -127797
+HX711 reading: -127147
+HX711 reading: -131626
+HX711 reading: -127915
+HX711 reading: -128087
+HX711 reading: -127718
+HX711 reading: -127512
+HX711 reading: -127317
+
+ */
