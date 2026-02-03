@@ -39,6 +39,8 @@ The sensors that I will be using are as follows:
 * Weight Measure
 * Inside Temperature and Humidity Measure
 * Outside Temperature Measure
+* Leverage Meshtastic service to send a daily update via LoRa
+
 
 ## To Dos
 - [ ] Should do something so I can zero the scale. Use the wifi control to do this?
