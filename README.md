@@ -146,7 +146,7 @@ Maybe I should make this a table :)
 * Onewire Temperature sensor
 * [Sparkfun Qwiix OpenLog](https://learn.sparkfun.com/tutorials/qwiic-openlog-hookup-guide)
 * Sparkfun QWICC shield for Arduino
-* Load Cells
+* Load Cells https://www.sparkfun.com/load-sensor-50kg-generic.html
 
 ### OLD BOM Stuff
 * [Arduino Uno Wifi Rev 2](https://docs.arduino.cc/hardware/uno-wifi-rev2) Quantity 1
