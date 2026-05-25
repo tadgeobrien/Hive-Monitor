@@ -119,9 +119,9 @@ void setup() {
           printWiFiStatus();
 
   //  load cell factor 5 KG
-  scale.set_scale(8388607);       // TOBRIEN 20260525 Used the value for earlier scale calibration.
+//  scale.set_scale(8388607);       // TOBRIEN 20260525 Used the value for earlier scale calibration. Think that this might not be correct.
   //  reset the scale to zero = 0
-  scale.tare(20);
+  scale.tare(20);  //TOBrien 20260525 need to watch this may also need to adjust.
 
 }
 
@@ -166,16 +166,10 @@ void loop() {
               client.println("");
             
             // the content of the HTTP response follows the header:
+            // TOBRIEN Eventually get rid of this.
               client.print("Click <a href=\"/H\">here</a> turn the LED on<br>");
               client.print("Click <a href=\"/H\">here</a> turn the LED off<br>");
 
-              //int randomReading = analogRead(A1);
-              //client.print("Random reading from analog pin: ");
-              //client.println(randomReading);
-              
-              //client.print(" ");
-              //client.print(currentTime);
-              //client.print(" ");
               
               //TOBrien implement the printing of the Data to the web interface
               client.println(String(rtc.stringDateUSA()));
@@ -215,7 +209,7 @@ void loop() {
                 }
            }
         }
-        // close the connectoin
+        // close the connection
         client.stop();
         Serial.println("Client disconnected");
       }
@@ -227,9 +221,6 @@ void loop() {
       //OutsideTemp();  // This should be my function to check outside temp.
       sensors.requestTemperatures();
       OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
-
-
-      
 
       //Inside hive monitoring
       SHTC3_Status_TypeDef result = mySHTC3.update(); //Update the sensor
