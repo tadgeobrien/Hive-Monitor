@@ -1,5 +1,23 @@
 # Development Log
 
+
+emove all weight from the loadcell
+15:21:51.644 -> and press enter
+15:21:51.644 -> 
+15:22:13.270 -> Determine zero weight offset
+15:22:14.995 -> OFFSET: 8388607
+15:22:14.995 -> 
+15:22:14.995 -> place a weight on the loadcell
+15:22:14.995 -> enter the weight in (whole) grams and press enter
+15:22:45.779 -> WEIGHT: 1134
+15:22:47.438 -> SCALE:  0.000000
+15:22:47.438 -> 
+15:22:47.438 -> use scale.set_offset(8388607); and scale.set_scale(0.000000);
+15:22:47.438 -> in the setup of your project
+
+
+
+
 ## 20250703 @ 18:02 - 
   TOBrien made a copy of the old hive monitor from 2024 and tried to get the weight to print. Currenlty not getting weight to print, but also appears that the one wire (external temp) is broken as I am seeing 
   -127 as a value. It was working before, but I have no idea what code I was actually running. I think I am going to make a text weight set of code and see if I can get that working with out anything else. 
