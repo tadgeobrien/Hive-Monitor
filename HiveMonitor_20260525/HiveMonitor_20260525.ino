@@ -224,7 +224,12 @@ void loop() {
       myTime();
       
       //Outside temp in C
-      OutsideTemp();  // This should be my function to check outside temp.
+      //OutsideTemp();  // This should be my function to check outside temp.
+      sensors.requestTemperatures();
+      OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
+
+
+      
 
       //Inside hive monitoring
       SHTC3_Status_TypeDef result = mySHTC3.update(); //Update the sensor
@@ -240,7 +245,7 @@ void loop() {
       */
       myLog.begin();
       // Printing this string to the OpenLog
-      myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weight");
+      //myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weight");
       myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+String(scale.read()));// FOR ADDING WEIGHT WHEN READY
 
       // Printing the same string to Serial output so I can verify it      
@@ -264,7 +269,7 @@ void printWiFiStatus(){
   Serial.println(ip);
   }
  
-void OutsideTemp(){
+/*void OutsideTemp(){
   // Function for getting the outside temperature. Use this in void loop.
   sensors.requestTemperatures();
   OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
@@ -286,6 +291,7 @@ void OutsideTemp(){
   //delay(3600000);
 
 }
+*/
 
 void myTime(){
 // TOBrien 20260118 Should really return a value on this and pass it differently.
