@@ -29,9 +29,8 @@
 #include "HX711.h"
 
 //Scale HX711 circuit wiring
-const int LOADCELL_DOUT_PIN = 2; // Data out pin
-const int LOADCELL_SCK_PIN = 3;  // Clock pin
-
+uint8_t dataPin = 2;
+uint8_t clockPin = 3;
 
 //Adding Classes
 RV8803 rtc;       // Declare an instance of the RV8803 class
@@ -54,7 +53,7 @@ float OutFah=0; // Outside Fahrenheit
 
 // Setting up for Humidity sensor.
 float InCel=0;  // Inside Celcius temp
-float InFah=0;  // Outside Farenheit May not use.
+float InFah=0;  // Inside Farenheit May not use.
 float InHum=0;  // Inside Humidity 
 
 //LED Testing tobrien 20240410 keep or remove?
@@ -72,7 +71,10 @@ void setup() {
   mySHTC3.begin();  // This calls the SHTC3 sensor to start
   rtc.begin();      // This calls the RTC to start
   rtc.set24Hour();  // This sets RTC to 24 hour clock
-  scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN); // Setting up for the Scale. 
+  scale.begin(dataPin, clockPin); // Setting up for the Scale. 
+  scale.set_scale(127.15);       //  TODO you need to calibrate this yourself.  
+  scale.tare();
+
   
   Serial.begin(9600);
   while (!Serial){
@@ -228,11 +230,6 @@ void loop() {
       //InsideHive();
 
 
-
-
-
-
-
       // Lets write some data to OpenLog Below is an example
         /*    DATE,TIME-24:00,% Humidity,InternalTemp(C),OutsideTemp(C),Weight(lbs)
             20240420,00:20,24,31,1,95
@@ -243,13 +240,11 @@ void loop() {
       myLog.begin();
       // Printing this string to the OpenLog
       myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weight");
-
-      
-     // myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+String(HiveWeight()));// FOR ADDING WEIGHT WHEN READY
+      myLog.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+String(scale.read()));// FOR ADDING WEIGHT WHEN READY
 
       // Printing the same string to Serial output so I can verify it      
-      Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weight");
-      //Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+HiveWeight);// FOR ADDING WEIGHT WHEN READY
+      //Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+",weight");
+      Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+String(scale.read()));// FOR ADDING WEIGHT WHEN READY
 
       //
       // Just leaving this here since I am getting a declareation error. 
