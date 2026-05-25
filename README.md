@@ -1,7 +1,9 @@
 # Development Log
 
+#20260525 
 
-emove all weight from the loadcell
+Was messing with the zeroing and this is the number I was getting back. Not sure if it is correct. But Just using as a reference at this point.
+Remove all weight from the loadcell
 15:21:51.644 -> and press enter
 15:21:51.644 -> 
 15:22:13.270 -> Determine zero weight offset
