@@ -189,6 +189,7 @@ void loop() {
               client.print(mySHTC3.toDegF());
               client.println(" deg F"); //Need to change to C
               client.println("<br>Weight");
+              client.println(scale.read());
 //              client.println(reading());
 
               //HTTP response ends with a blank line.
