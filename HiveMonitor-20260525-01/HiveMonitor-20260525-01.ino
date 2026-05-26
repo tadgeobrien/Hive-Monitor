@@ -11,7 +11,7 @@
 #define ONE_WIRE_BUS 5  //READ IS ON PIN 5
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
-float OutCel=0; // Outside Temp in Celcius
+float Celcius=0; // Outside Temp in Celcius
 
 
 // Openlog information.
@@ -27,7 +27,7 @@ void loop() {
   
   //Hive Outside Temp.
   sensors.requestTemperatures(); 
-  OutCel=sensors.getTempCByIndex(0);
+  Celcius=sensors.getTempCByIndex(0);
 
 //DATA FORMAT
       // Lets write some data to OpenLog Below is an example
@@ -46,7 +46,7 @@ void loop() {
 
 
   // Serial Print 
-   Serial.println(OutCel);// FOR ADDING WEIGHT WHEN READY
+   Serial.println(Celcius);// FOR ADDING WEIGHT WHEN READY
 
 // This is what I was working on in the past. It seemed to work, but I may need to tweak it.
 //  Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+String(scale.read()));// FOR ADDING WEIGHT WHEN READY
