@@ -1,6 +1,14 @@
 # Development Log
 
+
+
+
+
 #20260525 
+I am going to redo this. I am going to focus on just getting things into openlog first. I am going to start with the temperatures and then add the scale.
+
+
+
 
 Was messing with the zeroing and this is the number I was getting back. Not sure if it is correct. But Just using as a reference at this point.
 Remove all weight from the loadcell
