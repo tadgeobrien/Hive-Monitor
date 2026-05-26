@@ -55,7 +55,7 @@ void loop() {
 
 
   // Serial Print 
-  Serial.println(OutCel);// FOR ADDING WEIGHT WHEN READY
+  Serial.println((String("Outside Temp ")+OutCel));// FOR ADDING WEIGHT WHEN READY
 
   myLog.syncFile();
 
