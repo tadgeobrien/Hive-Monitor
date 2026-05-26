@@ -12,9 +12,10 @@
 //Hive Inside Temp and Humidity
 #include <SparkFun_SHTC3.h>     //Using for inside Humidity and Temp
 SHTC3 mySHTC3;    // Declare an instance of the SHTC3 class
-float InCel=0;  // Inside Celcius temp
-float InFah=0;  // Inside Farenheit May not use.
-float InHum=0;  // Inside Humidity 
+
+//float InCel=0;  // Inside Celcius temp
+//float InFah=0;  // Inside Farenheit May not use.
+//float InHum=0;  // Inside Humidity 
 
 
 // Hive Outside Temp.
@@ -36,6 +37,7 @@ void setup() {
   Serial.begin(9600); // Reading the serial monitor.
 
   //Inside Hive Temp
+  Wire.begin();  // May need as a dependency? TOBrien 20260525
   mySHTC3.begin();  // This calls the SHTC3 sensor to start
 
 
