@@ -1,12 +1,13 @@
-quantity,common name,URL,cost,need or have
-1,SparkFun Thing Plus - ESP32 WROOM (U.FL),https://www.sparkfun.com/products/17381,22.50,need
-1,SparkFun Humidity Sensor Breakout - SHTC3 (Qwiic),https://www.sparkfun.com/products/16467,10.95,have
-1,SparkFun OpenScale,https://www.sparkfun.com/products/13261,34.50,need
-1,Electronic scale, amazon.com,100,need
-1,Temperature Sensor - Waterproof (DS18B20),https://www.sparkfun.com/products/11050,10.95,have
-1,SparkFun Sunny Buddy - MPPT Solar Charger,https://www.sparkfun.com/products/12885,28.95,need
-1,Lithium Ion Battery - 6Ah,https://www.sparkfun.com/products/13856,32.50,need
-1,Solar Panel - 3.5W,https://www.sparkfun.com/products/13782,41.95,need
-1, Waterproof Enclosure, amazon.com,40,need
-
-https://www.adafruit.com/product/1141
+quantity,common name,URL
+1,SparkFun Humidity Sensor Breakout - SHTC3 (Qwiic),https://www.sparkfun.com/sparkfun-humidity-sensor-breakout-shtc3-qwiic.html
+1,Temperature Sensor - Waterproof (DS18B20),https://www.sparkfun.com/temperature-sensor-waterproof-ds18b20.html
+1,SparkFun Sunny Buddy - MPPT Solar Charger,https://www.sparkfun.com/sparkfun-sunny-buddy-mppt-solar-charger.html
+1,Lithium Ion Battery - 6Ah,https://www.sparkfun.com/products/13856
+1,Solar Panel - 3.5W,https://www.sparkfun.com/products/13782
+1,Arduino Wifi Rev 2,https://docs.arduino.cc/hardware/uno-wifi-rev2/
+1, SparkFun Humidity Sensor Breakout - SHTC3 (Qwiic) ,https://www.sparkfun.com/sparkfun-humidity-sensor-breakout-shtc3-qwiic.html
+1, SparkFun Real Time Clock Module - RV-1805 (Qwiic) ,https://www.sparkfun.com/sparkfun-real-time-clock-module-rv-1805-qwiic.html
+1, SparkFun Qwiic OpenLog ,https://www.sparkfun.com/sparkfun-qwiic-openlog.html
+1, SparkFun Qwiic Shield for Arduino ,https://www.sparkfun.com/sparkfun-qwiic-shield-for-arduino.html
+1, SparkFun Load Cell Amplifier - HX711 ,https://www.sparkfun.com/sparkfun-load-cell-amplifier-hx711.html
+1, SparkFun Load Sensor Combinator ,https://www.sparkfun.com/sparkfun-load-sensor-combinator.html
