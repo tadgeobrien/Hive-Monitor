@@ -5,10 +5,13 @@
 
 
 #20260525 
+
+CURRENT WORKING FILE HiveMonitor-20260525-01/HiveMonitor-20260525-01.ino
+
 I am going to redo this. I am going to focus on just getting things into openlog first. I am going to start with the temperatures and then add the scale.
 
 - [X] Outside temperature working Serial Out. Need to verify inside OpenLog.
-- [ ] Inside Temp
+- [X] Inside Temp should be working now too.
 
 
 
