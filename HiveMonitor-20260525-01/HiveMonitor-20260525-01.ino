@@ -51,4 +51,6 @@ void loop() {
 // This is what I was working on in the past. It seemed to work, but I may need to tweak it.
 //  Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+String(scale.read()));// FOR ADDING WEIGHT WHEN READY
 
+delay(3000);
+
 }
