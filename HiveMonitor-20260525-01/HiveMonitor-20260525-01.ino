@@ -37,7 +37,7 @@ void setup() {
   Serial.begin(9600); // Reading the serial monitor.
 
   //Inside Hive Temp
-  Wire.begin();  // May need as a dependency? TOBrien 20260525
+  Wire.begin();  // Dependency for SHTC3 Sensor.
   mySHTC3.begin();  // This calls the SHTC3 sensor to start
 
 
@@ -80,7 +80,7 @@ void loop() {
 
 
   // Serial Print 
-  Serial.println("Inside Humidity Percent"+String(mySHTC3.toPercent())+" Inside Degrees Cel  "+String(mySHTC3.toDegC())+","+(String("Outside Temp C.")+OutCel));// FOR ADDING WEIGHT WHEN READY
+  Serial.println("Inside Humidity Percent "+String(mySHTC3.toPercent())+", Inside Degrees Cel "+String(mySHTC3.toDegC())+","+(String("Outside Temp C.")+OutCel));// FOR ADDING WEIGHT WHEN READY
 
   myLog.syncFile();
 
