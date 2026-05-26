@@ -7,6 +7,8 @@
 #20260525 
 I am going to redo this. I am going to focus on just getting things into openlog first. I am going to start with the temperatures and then add the scale.
 
+- [X] Outside temperature working Serial Out. Need to verify inside OpenLog.
+- [ ] Inside Temp
 
 
 
