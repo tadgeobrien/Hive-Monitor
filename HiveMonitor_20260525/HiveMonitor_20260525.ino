@@ -121,7 +121,7 @@ void setup() {
   //  load cell factor 5 KG
 //  scale.set_scale(8388607);       // TOBRIEN 20260525 Used the value for earlier scale calibration. Think that this might not be correct.
   //  reset the scale to zero = 0
-  scale.tare(20);  //TOBrien 20260525 need to watch this may also need to adjust.
+//  scale.tare(20);  //TOBrien 20260525 need to watch this may also need to adjust.
 
 }
 
