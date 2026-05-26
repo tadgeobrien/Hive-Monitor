@@ -260,29 +260,6 @@ void printWiFiStatus(){
   Serial.println(ip);
   }
  
-/*void OutsideTemp(){
-  // Function for getting the outside temperature. Use this in void loop.
-  sensors.requestTemperatures();
-  OutCel=sensors.getTempCByIndex(0); //Get Outside C from Onewire.
-  
-  //Serial.print(" Outside C = "); // TOBrien 20240412 Commented out since I should see it on the web UI
-  //Serial.print(OutCel);       // TOBrien 20240412 Commented out since I should see it on the web UI
-  //
-  // TOBrien 20240410 Maybe I can put the delay up higher so I am calling the functions without the delays.
-  // Have to wait to test.
-  //
-  // 3 Seconds  Testing
-  //delay(3000);
-
-  //Mathing the AP 
-  delay(10000);
-  // 3 Minutes  First Field Testing
-  //delay(180000);
-  // One hour
-  //delay(3600000);
-
-}
-*/
 
 void myTime(){
 // TOBrien 20260118 Should really return a value on this and pass it differently.
@@ -310,13 +287,4 @@ void myTime(){
   //delay(180000);
   // One hour
   //delay(3600000);
-}
-
-
-
-void DataManage(){
-  // I think this is where I want to be able to manage files 
-  // Roll Files based on size 
-  // Can I date stamp them YearMonthDay.csv when they are rolled?
-  // Should this run after or before the data section? 
 }
