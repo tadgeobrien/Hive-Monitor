@@ -15,6 +15,8 @@ float OutCel=0; // Outside Temp in Celcius
 
 
 // Openlog information.
+#include <SparkFun_Qwiic_OpenLog_Arduino_Library.h>
+OpenLog myLog;    // Declare an instance of the OpenLog class
 
 
 void setup() {
@@ -46,12 +48,17 @@ void loop() {
 
 
   // Sending to OpenLog
+  myLog.begin();
+  myLog.println(OutCel);// FOR ADDING WEIGHT WHEN READY
 
-
+  
 
 
   // Serial Print 
-   Serial.println(OutCel);// FOR ADDING WEIGHT WHEN READY
+  Serial.println(OutCel);// FOR ADDING WEIGHT WHEN READY
+
+  myLog.syncFile();
+
 
 // This is what I was working on in the past. It seemed to work, but I may need to tweak it.
 //  Serial.println(String(rtc.stringDateUSA())+","+String(rtc.stringTime())+","+String(mySHTC3.toPercent())+","+String(mySHTC3.toDegC())+","+String(OutCel)+","+String(scale.read()));// FOR ADDING WEIGHT WHEN READY
